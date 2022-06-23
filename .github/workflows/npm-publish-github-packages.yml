@@ -1,35 +1,26 @@
-name: Semantic Release
+name: Node.js Package
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  
   build:
-    
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read
+      packages: write 
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14.17
+          node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
+          # Defaults to the user or organization that owns the workflow file
           scope: '@homefile-dev'
-        
-      - name: Install Dependencies
-        run: yarn install
-
-      - name: Build App
-        run: yarn build
-
-      - name: Semantic Release
+      - run: npm install
+      - run: npm publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
-        
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
