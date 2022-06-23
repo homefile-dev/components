@@ -1,0 +1,109 @@
+{
+  "name": "@homefile-dev/components",
+  "version": "1.0.0",
+  "author": "Homefile",
+  "license": "UNLICENSED",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homefile-dev/components.git"
+  },
+  "peerDependencies": {
+    "@chakra-ui/icons": ">=1",
+    "@chakra-ui/react": ">=1",
+    "@emotion/react": "^>=11",
+    "@emotion/styled": ">=11",
+    "@fontsource/assistant": ">=4",
+    "@fontsource/poppins": ">=4",
+    "@hassanmojab/react-modern-calendar-datepicker": ">=3",
+    "axios": ">=0",
+    "i18next": ">=21",
+    "i18next-browser-languagedetector": ">=6",
+    "react": ">=16",
+    "react-dropzone": ">=14",
+    "react-i18next": ">=11",
+    "react-modern-calendar-datepicker": ">=3"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@chakra-ui/storybook-addon": "^1.0.3",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "babel-loader": "^8.2.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "copyfiles": "^2.4.1",
+    "dotenv-webpack": "^7.1.0",
+    "git-commit-msg-linter": "^4.1.1",
+    "husky": "^7.0.0",
+    "json-loader": "^0.5.7",
+    "miragejs": "^0.1.43",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.3",
+    "storybook-axios": "^1.0.1",
+    "storybook-react-i18next": "^1.0.18",
+    "typescript": "^4.6.3",
+    "webpack": "^5.70.0"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/assistant": "^4.5.8",
+    "@fontsource/poppins": "^4.5.5",
+    "@hassanmojab/react-modern-calendar-datepicker": "^3.1.7",
+    "axios": "^0.26.1",
+    "framer-motion": "^4.1.17",
+    "i18next": "^21.6.14",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-http-backend": "^1.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^14.1.2",
+    "react-i18next": "^11.16.2",
+    "react-icons": "^3.11.0",
+    "react-modern-calendar-datepicker": "^3.1.6",
+    "react-spinners": "^0.11.0",
+    "valtio": "^1.5.2"
+  },
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "yarn clean && tsc && yarn copy",
+    "build-storybook": "build-storybook",
+    "clean": "rimraf dist/",
+    "copy": "copyfiles -u 1 src/assets/**/* src/styles/* dist/",
+    "prepare": "husky install"
+  },
+  "resolutions": {
+    "trim-newlines": "^3.0.1",
+    "**/trim": "^1.0.0",
+    "glob-parent": "^6.0.1"
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
+}

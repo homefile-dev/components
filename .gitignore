@@ -1,0 +1,11 @@
+node_modules
+
+# variables
+.env
+
+# production
+/dist
+/storybook-static
+
+# logs
+yarn-error.log

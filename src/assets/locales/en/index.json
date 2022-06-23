@@ -1,0 +1,265 @@
+{
+  "addMedia": {
+    "addBtn": "Add",
+    "editBtn": "Edit",
+    "title": "Images",
+    "description": "Enter a description",
+    "errorSize": "Please select a file less than 5MB",
+    "errorType": "File type must be .png, .jpeg or .jpg"
+  },
+  "addRecipient": {
+    "addBtn": "Add",
+    "errorDuplicate": "This email address is already in the list",
+    "placeholder": "Enter a recipient email",
+    "title": "Recipient"
+  },
+  "badges": {
+    "new": "New",
+    "shared": "Shared"
+  },
+  "buildingApp": {
+    "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",
+    "title": "One moment, we’re building your homefile."
+  },
+  "createDocument": {
+    "tabs": {
+      "tab1": "Detail",
+      "tab2": "Images & Media",
+      "tab3": "Recipients",
+      "tab4": "Last Report"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "preview": "Preview",
+      "save": "Save",
+      "saveDraft": "Save Draft",
+      "send": "Send"
+    },
+    "menuItems": {
+      "publicTemplate": "Public Template",
+      "progressReport": "Progress Report",
+      "proposal": "Proposal"
+    },
+    "preview": {
+      "title": "Preview Document",
+      "message": "Thank you.",
+      "message2": "If you have any questions, please contact:"
+    },
+    "title": "Create Document"
+  },
+  "dragDrop": {
+    "message": "Drop files to attach or ",
+    "message2": "browse"
+  },
+  "folderSharing": {
+    "altIcon": "Folder",
+    "details": {
+      "added": "Added",
+      "addedBy": "Added By",
+      "delete": "Delete Folder",
+      "description": "Description",
+      "name": "Name",
+      "placeholder": "Enter a name",
+      "placeholderDescription": "Enter a description",
+      "title": "Files",
+      "errorSize": "Please select a file less than 5MB",
+      "errorType": "File type must be .jpeg, .jpg, .pdf, .txt, .doc or .docx"
+    },
+    "menu": {
+      "delete": "Delete File",
+      "details": "View Details",
+      "download": "Download",
+      "share": "Share"
+    },
+    "tabs": {
+      "tab1": "Details",
+      "tab2": "Shared with"
+    },
+    "newFolder": "new",
+    "title": "Files"
+  },
+  "footer": {
+    "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
+    "privacyLink": "Privacy Policy",
+    "privacyUrl": "https://homefile.cloud/privacy",
+    "termsLink": "Terms of Service",
+    "termsUrl": "https://homefile.cloud/terms"
+  },
+  "forms": {
+    "email": "Email",
+    "errorEmail": "Please enter a valid email",
+    "errorEmailExists": "Email already exists",
+    "errorEmailNotActivated": "This email has not an account associated with it",
+    "errorLogin": "Invalid email or password",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "errorPasswordMatch": "Passwords do not match",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "password": "Password",
+    "passwordConfirm": "Re-enter Password",
+    "required": "is required",
+    "return": "Back",
+    "submit": "Submit"
+  },
+  "homeSummary": {
+    "altFolderIcon": "folder",
+    "createDocument": {
+      "tab1": "Details",
+      "tab2": "Images"
+    },
+    "report": {
+      "opened": "Opened",
+      "unopened": "Unopened"
+    }
+  },
+  "images": {
+    "altIcon": "icon",
+    "altImage": "image"
+  },
+  "launchpad": {
+    "menu": {
+      "profile": "My profile",
+      "logout": "Lo,gout"
+    },
+    "viewsBT": "Views"
+  },
+  "myHomes": {
+    "addHome": "Home",
+    "board": {
+      "title": "You are viewing "
+    },
+    "details": {
+      "header": "Homefile Summary",
+      "tabs": {
+        "tab1": "Details",
+        "tab2": "Projects",
+        "tab3": "Clients"
+      }
+    },
+    "firstHome": {
+      "skipBt": "Skip for Now",
+      "title": "Let’s add your first home."
+    },
+    "form": {
+      "address": "Address",
+      "apartmentNumber": "Apartment, Suite, Unit, Building, Floor, etc.",
+      "city": "City",
+      "invalid": "is invalid",
+      "name": "Name or Project Number",
+      "obs": "Additional information",
+      "projectName": "Create Name or Project Number",
+      "required": "is required",
+      "state": "State",
+      "zip": "Zip Code"
+    },
+    "menu": {
+      "settings": "Settings",
+      "help": "Help"
+    },
+    "newHome": {
+      "title": "Add Home",
+      "btAria": "close"
+    },
+
+    "saveBt": "Save",
+    "section1": "Home address",
+    "section2": "Name Home/Project",
+    "select": {
+      "title": "Select option",
+      "option1": "Active homes",
+      "option2": "Inactive homes"
+    },
+    "selectRelationship": {
+      "title": "Select relationship",
+      "option1": "I am the Builder",
+      "option2": "I am the Designer",
+      "option3": "I am the Engineer",
+      "option4": "I am the Homeowner"
+    },
+    "title": "My Homes"
+  },
+  "newPassword": {
+    "confirm": "Confirm Password",
+    "create": "Create Password",
+    "title": "Enter your password below."
+  },
+  "registration": {
+    "activateBt": "Activate my homefile account",
+    "activateBtShort": "Activate account",
+    "instruction": "To complete your Homefile registration process, please click on the button below to confirm and activate your account.",
+    "notReply": "Please do not reply to this email as this is not an active email account."
+  },
+  "reset": {
+    "email": "Enter your account email",
+    "instruction": "We will send instructions to reset your password",
+    "resetBt": "Reset Password",
+    "signinBt": "Log in",
+    "title": "Reset your Password"
+  },
+  "rooms": {
+    "bathroom": "Bathroom",
+    "bedroom": "Bedroom",
+    "closet": "Closet",
+    "dining": "Dining Room",
+    "entryway": "Entryway",
+    "garage": "Garage",
+    "guestBedroom": "Guest Bedroom",
+    "hallway": "Hallway",
+    "kitchen": "Kitchen",
+    "laundry": "Laundry",
+    "living": "Living Room",
+    "masterBedroom": "Master Bedroom",
+    "mudroom": "Mudroom",
+    "office": "Office",
+    "patio": "Patio",
+    "structure": "Structure",
+    "theatre": "Theatre"
+  },
+  "sendCommunication": {
+    "btLabel": "Document",
+    "title": "Send Communication",
+    "headers": {
+      "selectHome": "Select Home",
+      "dateRange": "Date Range",
+      "documentName": "Document Name"
+    },
+    "placeholder": "Insert document name"
+  },
+  "sendDocument": {
+    "setupBt": "Set Up Document",
+    "title": "Send Document"
+  },
+  "signin": {
+    "forgotBt": "Forgot Password?",
+    "title": "Please Log in",
+    "signinBt": "Log in",
+    "signupBt": "Sign up",
+    "signup": "Don’t have a Homefile account?"
+  },
+  "signup": {
+    "signin": "Already have a Homefile account?",
+    "signinBt": "Log in",
+    "signupBt": "Create Account",
+    "subtitle": "Create a strong password",
+    "terms": "By creating an account you agree to the Homefile ",
+    "title": "Create your Homefile Account"
+  },
+  "welcome": {
+    "greeting": "Hello ",
+    "greeting2": "Hi ",
+    "launchpad": "Welcome to your Property Launchpad",
+    "message": "We are excited to have you on board. We are here to help you get started with Homefile. We prepared a few resources to help you get started. Please click on the video below to start your journey.",
+    "message2": "We hope you enjoy your time with Homefile.",
+    "signature": "Your Homefile Crew",
+    "title": "Welcome to Homefile",
+    "welcomeBt": "Go to launchpad"
+  },
+  "validation": {
+    "alert1": "If you have not received an email, please check your spam folder or",
+    "resendBt": "Resend Email Verification",
+    "resendResetBt": "Resend Reset Password Link",
+    "title1": "We just sent a message to ",
+    "title2": " with a link to activate your account.",
+    "title3": "to reset your password."
+  }
+}
