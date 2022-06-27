@@ -15,7 +15,7 @@ interface FilesI {
   handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
   handleFileClick: (id: string) => void
-  handleOpenFile: (id: string) => void
+  handleOpenFile: (file: FolderFileI) => void
   panelSize?: string
   uploading?: boolean
 }
@@ -81,7 +81,10 @@ export const Files = ({
           return (
             <Box key={_id + index}>
               <File
-                handleClick={(id) => handleOpenFile(id)}
+                handleClick={(id) => {
+                  const file = files.find((file) => file._id === id)
+                  file && handleOpenFile(file)
+                }}
                 handleEditFileName={handleEditFileName}
                 isNew={isNew}
                 isShared={isShared}
@@ -113,3 +116,4 @@ export const Files = ({
     </Wrap>
   )
 }
+

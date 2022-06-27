@@ -22,20 +22,20 @@ export const useFolderDetail = () => {
         description: isLocal ? '' : file.description,
         extension: isLocal ? '' : file?.file?.extension,
         file: isLocal ? file : file?.file,
-        _id: isLocal ? file.name : file._id,
+        _id: isLocal ? file.name : file?._id,
         isNew: isLocal ? true : false,
         isShare: isLocal ? false : false,
         imageUrl: isLocal
           ? URL.createObjectURL(file)
           : `${storageUrl}/${file?.file?.bucketName}/${file?.file?.fileName}.${file?.file?.extension}`,
-        project: isLocal ? '' : file.project,
-        report: isLocal ? [] : file.report,
-        subType: isLocal ? '' : file.subType,
-        title: isLocal ? file?.name.split('.')[0] : file.title,
+        project: isLocal ? '' : file?.project,
+        report: isLocal ? [] : file?.report,
+        subType: isLocal ? '' : file?.subType,
+        title: isLocal ? file?.name.split('.')[0] : file?.title,
         type: isLocal ? '' : file?.type,
         updatedAt: isLocal
-          ? formatDate(file.lastModified)
-          : formatDate(file.updatedAt),
+          ? formatDate(file?.lastModified)
+          : formatDate(file?.updatedAt),
         uploaded: isLocal ? false : true,
         user: isLocal ? '' : file?.user,
       }

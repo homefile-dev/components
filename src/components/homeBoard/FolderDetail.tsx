@@ -128,10 +128,7 @@ export const FolderDetail = ({
                   const file = handleFileUpdate(id)
                   file && handleFileClick(file)
                 }}
-                handleOpenFile={(id) => {
-                  const file = handleFileUpdate(id)
-                  file && handleOpenFile(file)
-                }}
+                handleOpenFile={handleOpenFile}
                 panelSize={panelSize}
                 uploading={uploading}
               />
