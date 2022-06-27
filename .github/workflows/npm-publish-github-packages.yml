@@ -22,8 +22,6 @@ jobs:
           scope: '@homefile-dev'
       - run: yarn install
       - run: yarn build
-      - name: Semantic Release
+      - run: yarn publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
