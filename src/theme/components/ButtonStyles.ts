@@ -169,6 +169,7 @@ const Button = {
       borderRadius: 'none',
       _disabled: {
         pointerEvents: 'none',
+        filter: 'grayscale(100%)',
       },
       _hover: {
         backgroundColor: 'white',

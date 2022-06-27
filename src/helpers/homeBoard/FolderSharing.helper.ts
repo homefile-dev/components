@@ -4,14 +4,18 @@ import { SelectItemI } from '../../interfaces/inputs/Select.interface'
 
 export const FoldersDB: FolderI[] = [
   {
-    isNew: true,
-    isShared: true,
+    deleted: false,
+    status: 'new',
+    needsReview: true,
+    reviewed: false,
     subTypes: ['Misc'],
     type: 'General',
   },
   {
-    isNew: false,
-    isShared: true,
+    deleted: false,
+    status: '',
+    needsReview: true,
+    reviewed: false,
     type: 'Construction',
     subTypes: [
       'Progress Report',
@@ -22,8 +26,10 @@ export const FoldersDB: FolderI[] = [
     ],
   },
   {
-    isNew: false,
-    isShared: true,
+    deleted: false,
+    status: '',
+    needsReview: false,
+    reviewed: true,
     type: 'Appliances',
     subTypes: [
       'Refrigeration',
@@ -34,20 +40,26 @@ export const FoldersDB: FolderI[] = [
     ],
   },
   {
-    isNew: false,
-    isShared: false,
+    deleted: true,
+    status: '',
+    needsReview: false,
+    reviewed: false,
     type: 'Private',
     subTypes: ['Blueprint', 'Misc'],
   },
   {
-    isNew: true,
-    isShared: false,
+    deleted: false,
+    status: 'new',
+    needsReview: true,
+    reviewed: false,
     type: 'Drawings',
     subTypes: ['Blueprint', 'Misc'],
   },
   {
-    isNew: false,
-    isShared: false,
+    deleted: false,
+    status: '',
+    needsReview: false,
+    reviewed: false,
     type: 'Files',
     subTypes: ['PDF', 'Text', 'Misc'],
   },

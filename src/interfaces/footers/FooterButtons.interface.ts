@@ -1,5 +1,6 @@
 export interface FooterButtonI {
   buttonStyle: string
+  isDisabled?: boolean
   label: string
   onClick: () => void
 }

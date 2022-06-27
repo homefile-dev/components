@@ -62,6 +62,8 @@ export const FolderDetail = ({
   } = useFolderDetail()
 
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
+  const isNew = folder.status?.toLowerCase() === 'new'
+  const isShared = folder.needsReview || folder.reviewed
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
 
@@ -88,11 +90,7 @@ export const FolderDetail = ({
         <PanelHeader
           handleCloseButton={handleClose}
           icon={
-            folder?.isNew
-              ? VioletFolder
-              : folder?.isShared
-              ? BlueFolder
-              : YellowFolderUnshared
+            isNew ? VioletFolder : isShared ? BlueFolder : YellowFolderUnshared
           }
           title={folder?.type || ''}
         />
@@ -148,6 +146,7 @@ export const FolderDetail = ({
             <FooterButtons
               button3={{
                 buttonStyle: 'secondaryFooter',
+                isDisabled: true,
                 label: t('folderSharing.details.delete'),
                 onClick: () => {
                   handleDeleteFolder(folder.type)

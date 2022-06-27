@@ -16,7 +16,6 @@ import {
   YellowFolder,
   YellowFolderUnshared,
 } from '../../assets/images'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
 import { FolderSharingI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import { TextBagde } from '../badge/TextBadge'
 import { ContainerHeader } from '../headers'
@@ -24,6 +23,7 @@ import { CustomIcon } from '../icons/CustomIcon'
 import { SelectInput } from '../inputs/SelectInput'
 import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 import { LeftButtonAnimated } from '../buttons/LeftButtonAnimated'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const FolderSharing = ({
   folders,
@@ -61,7 +61,19 @@ export const FolderSharing = ({
       <Wrap py="8" px="base" spacing="base">
         {folders &&
           folders.map(
-            ({ isNew = false, isShared = false, subTypes, type }, index) => {
+            (
+              {
+                deleted = false,
+                needsReview = false,
+                reviewed = false,
+                status,
+                subTypes,
+                type,
+              },
+              index
+            ) => {
+              const isNew = status?.toLowerCase() === 'new'
+              const isShared = needsReview || reviewed
               const icon = isNew
                 ? VioletFolder
                 : isShared
@@ -70,12 +82,20 @@ export const FolderSharing = ({
               return (
                 <WrapItem position="relative" key={type + index}>
                   <Button
+                    disabled={deleted}
                     variant="folder"
                     px="base"
                     pb="base"
                     pt="6"
                     onClick={() => {
-                      handleFolderClick({ isNew, isShared, subTypes, type })
+                      handleFolderClick({
+                        deleted,
+                        needsReview,
+                        reviewed,
+                        status,
+                        subTypes,
+                        type,
+                      })
                       folderHeaderProxy.icon = icon
                       folderHeaderProxy.title = type
                     }}

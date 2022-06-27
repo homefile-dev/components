@@ -2,8 +2,10 @@ import { SelectItemI } from "../inputs/Select.interface";
 import { MenuItemI } from "../launchpad/IconMenu.interface";
 
 export interface FolderI {
-  isNew?: boolean
-  isShared?: boolean
+  deleted: boolean
+  needsReview?: boolean
+  reviewed?: boolean
+  status?: string
   subTypes: string[]
   type: string
 }

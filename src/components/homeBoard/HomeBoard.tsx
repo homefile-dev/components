@@ -1,4 +1,4 @@
-import { Box, Flex, Slide, Stack, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, Stack, useDisclosure } from '@chakra-ui/react'
 import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards } from '../../helpers/myHomes'
 import { SendCommunication } from '../sendCommunication/SendCommunication'
@@ -29,8 +29,10 @@ export const HomeBoard = () => {
   } = useDisclosure()
 
   const [selectedFolder, setSelectedFolder] = useState<FolderI>({
-    isNew: false,
-    isShared: false,
+    deleted: false,
+    needsReview: false,
+    reviewed: false,
+    status: '',
     subTypes: [],
     type: '',
   })
