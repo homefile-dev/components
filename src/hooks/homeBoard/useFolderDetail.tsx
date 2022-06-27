@@ -31,7 +31,7 @@ export const useFolderDetail = () => {
         report: isLocal ? [] : file.report,
         subType: isLocal ? '' : file.subType,
         title: isLocal ? file?.name : file.title,
-        type: isLocal ? '' : file?.type,
+        type: isLocal ? '' : file?.file?.extension,
         updatedAt: isLocal
           ? formatDate(file.lastModified)
           : formatDate(file.updatedAt),
