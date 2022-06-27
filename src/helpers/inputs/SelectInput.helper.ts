@@ -8,7 +8,7 @@ export const SelectHomes = [
     _id: '2',
   },
   {
-    name: 'The Clarks',
+    name: 'The Clarks and the Rothschilds',
     _id: '3',
   },
 ]

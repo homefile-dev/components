@@ -16,7 +16,7 @@ export const SelectInput = ({ handleClick, initailValue, items }: SelectI) => {
   return (
     <Menu>
       <MenuButton
-        w="10rem"
+        w="12rem"
         bg="white"
         h="input.sm"
         px="2"
@@ -27,7 +27,9 @@ export const SelectInput = ({ handleClick, initailValue, items }: SelectI) => {
         _focus={{ borderColor: 'input.borderFocus' }}
       >
         <Flex align="center" gap="4" justify="space-between">
-          <Text variant="info">{selectedValue}</Text>
+          <Text variant="info" noOfLines={1} overflow="hidden" textAlign="left">
+            {selectedValue}
+          </Text>
           <CustomIcon type={BsChevronDown} />
         </Flex>
       </MenuButton>
