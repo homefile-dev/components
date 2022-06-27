@@ -11,11 +11,17 @@ import { BsChevronDown } from 'react-icons/bs'
 import { SelectI } from '../../interfaces/inputs/Select.interface'
 import { useState } from 'react'
 
-export const SelectInput = ({ handleClick, initailValue, items }: SelectI) => {
+export const SelectInput = ({
+  handleClick,
+  initailValue,
+  isDisabled,
+  items,
+}: SelectI) => {
   const [selectedValue, setSelectedValue] = useState<string>(initailValue)
   return (
     <Menu>
       <MenuButton
+        disabled={isDisabled}
         w="12rem"
         bg="white"
         h="input.sm"
@@ -25,6 +31,11 @@ export const SelectInput = ({ handleClick, initailValue, items }: SelectI) => {
         borderColor="input.border"
         _hover={{ borderColor: 'input.borderHover' }}
         _focus={{ borderColor: 'input.borderFocus' }}
+        _disabled={{
+          bg: 'container.neutralBlue',
+          color: 'container.neutral',
+          pointerEvents: 'none',
+        }}
       >
         <Flex align="center" gap="4" justify="space-between">
           <Text variant="info" noOfLines={1} overflow="hidden" textAlign="left">

@@ -77,7 +77,6 @@ export const Files = ({
           },
           index
         ) => {
-          const titleFormatted = title?.split('.')[0]
           fileDetailProxy.description = description
           return (
             <Box key={_id + index}>
@@ -87,7 +86,7 @@ export const Files = ({
                 isNew={isNew}
                 isShared={isShared}
                 menu={fileMenu}
-                title={titleFormatted}
+                title={title}
                 type={extension || ''}
                 updatedAt={updatedAt}
                 uploaded={uploaded}

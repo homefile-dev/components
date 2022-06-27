@@ -38,6 +38,7 @@ export const FolderSharing = ({
   return (
     <Container variant="launchpad" minW={isDesktop ? '60%' : 'full'}>
       <ContainerHeader
+        disabled
         title={t('folderSharing.title')}
         titleIcon={YellowFolder}
         menuItems={menuItems}
@@ -48,6 +49,7 @@ export const FolderSharing = ({
           <SelectInput
             handleClick={(form) => handleSelect(form)}
             initailValue={initialSelectItem.name}
+            isDisabled
             items={selectItems}
           />
           <LeftButtonAnimated
@@ -81,45 +83,52 @@ export const FolderSharing = ({
                 : YellowFolderUnshared
               return (
                 <WrapItem position="relative" key={type + index}>
-                  <Button
-                    disabled={deleted}
-                    variant="folder"
-                    px="base"
-                    pb="base"
-                    pt="6"
-                    onClick={() => {
-                      handleFolderClick({
-                        deleted,
-                        needsReview,
-                        reviewed,
-                        status,
-                        subTypes,
-                        type,
-                      })
-                      folderHeaderProxy.icon = icon
-                      folderHeaderProxy.title = type
-                    }}
-                  >
-                    <Flex gap="1" position="absolute" top="-1" left="base">
-                      {isNew && <TextBagde />}
-                      {isShared && (
-                        <TextBagde
-                          bgColor="container.blue"
-                          text={t('badges.shared')}
-                          width="3.4rem"
+                  {!deleted && (
+                    <Button
+                      variant="folder"
+                      px="base"
+                      pb="base"
+                      pt="6"
+                      onClick={() => {
+                        handleFolderClick({
+                          deleted,
+                          needsReview,
+                          reviewed,
+                          status,
+                          subTypes,
+                          type,
+                        })
+                        folderHeaderProxy.icon = icon
+                        folderHeaderProxy.title = type
+                      }}
+                    >
+                      <Flex gap="1" position="absolute" top="-1" left="base">
+                        {isNew && <TextBagde />}
+                        {isShared ? (
+                          <TextBagde
+                            bgColor="container.blue"
+                            text={t('badges.shared')}
+                            width="3.4rem"
+                          />
+                        ) : (
+                          <TextBagde
+                            bgColor="container.warning"
+                            text={t('badges.private')}
+                            width="3.4rem"
+                          />
+                        )}
+                      </Flex>
+                      <Flex direction="column" gap="base" align="center">
+                        <Image
+                          src={icon}
+                          w="3.7rem"
+                          h="auto"
+                          alt={t('folderSharing.altIcon')}
                         />
-                      )}
-                    </Flex>
-                    <Flex direction="column" gap="base" align="center">
-                      <Image
-                        src={icon}
-                        w="3.7rem"
-                        h="auto"
-                        alt={t('folderSharing.altIcon')}
-                      />
-                      <Text fontSize="sm">{type}</Text>
-                    </Flex>
-                  </Button>
+                        <Text fontSize="sm">{type}</Text>
+                      </Flex>
+                    </Button>
+                  )}
                 </WrapItem>
               )
             }

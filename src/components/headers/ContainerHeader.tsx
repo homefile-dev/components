@@ -3,6 +3,7 @@ import { ContainerHeaderI } from '../../interfaces/headers/ContainerHeader.inter
 import IconMenu from '../launchpad/IconMenu'
 
 export const ContainerHeader = ({
+  disabled,
   icon,
   isThin,
   itemForm,
@@ -21,7 +22,12 @@ export const ContainerHeader = ({
       {title && <Text>{title}</Text>}
     </Flex>
     {menuItems ? (
-      <IconMenu icon={icon} itemForm={itemForm} menuItems={menuItems} />
+      <IconMenu
+        icon={icon}
+        itemForm={itemForm}
+        menuItems={menuItems}
+        disabled={disabled}
+      />
     ) : (
       <></>
     )}

@@ -15,7 +15,8 @@
   },
   "badges": {
     "new": "New",
-    "shared": "Shared"
+    "shared": "Shared",
+    "private": "Private"
   },
   "buildingApp": {
     "subtitle": "We are connecting to public sources to pull the relevant information about your home into your homefile.",
