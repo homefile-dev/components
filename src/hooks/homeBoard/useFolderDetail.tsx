@@ -20,6 +20,7 @@ export const useFolderDetail = () => {
     const newFiles = files.map((file: any) => {
       return {
         description: isLocal ? '' : file.description,
+        extension: isLocal ? '' : file?.file?.extension,
         file: isLocal ? file : file?.file,
         _id: isLocal ? file.name : file._id,
         isNew: isLocal ? true : false,
@@ -31,7 +32,7 @@ export const useFolderDetail = () => {
         report: isLocal ? [] : file.report,
         subType: isLocal ? '' : file.subType,
         title: isLocal ? file?.name : file.title,
-        type: isLocal ? '' : file?.file?.extension,
+        type: isLocal ? '' : file?.type,
         updatedAt: isLocal
           ? formatDate(file.lastModified)
           : formatDate(file.updatedAt),
@@ -85,6 +86,7 @@ export const useFolderDetail = () => {
     totalFiles.splice(findIndex(id), 1)
     setTotalFiles([...totalFiles])
   }
+  
 
   useEffect(() => {
     if (hasError) {

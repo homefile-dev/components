@@ -67,11 +67,11 @@ export const Files = ({
         (
           {
             description,
+            extension,
             _id,
             isNew,
             isShared,
             title,
-            type,
             uploaded,
             updatedAt,
           },
@@ -88,7 +88,7 @@ export const Files = ({
                 isShared={isShared}
                 menu={fileMenu}
                 title={titleFormatted}
-                type={type}
+                type={extension || ''}
                 updatedAt={updatedAt}
                 uploaded={uploaded}
                 uploading={uploading}

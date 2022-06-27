@@ -40,6 +40,7 @@ interface FileDBI {
 
 export interface FolderFileI {
   description?: string
+  extension?: string
   file?: File | FileDBI
   _id: string
   isNew?: boolean

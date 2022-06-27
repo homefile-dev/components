@@ -100,12 +100,14 @@ export const FolderDetail = ({
       <SortHeader />
       <DrawerBody p="0" bg="white">
         <Stack spacing="4" w="full" p="base" h="100%">
-          <DragDropArea
-            errorMessage={errorMessage}
-            getInputProps={getInputProps}
-            getRootProps={getRootProps}
-            hasError={hasError}
-          />
+          {folder.type.toLowerCase() !== 'construction' && (
+            <DragDropArea
+              errorMessage={errorMessage}
+              getInputProps={getInputProps}
+              getRootProps={getRootProps}
+              hasError={hasError}
+            />
+          )}
           <DragDropLoading
             children={
               <Files
