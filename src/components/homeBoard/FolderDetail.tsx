@@ -66,8 +66,14 @@ export const FolderDetail = ({
   } = useFolderDetail()
 
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
-  const isNew = folder.status?.toLowerCase() === 'new'
-  const isShared = folder.needsReview || folder.reviewed
+  // const isNew = folder.status?.toLowerCase() === 'new'
+  // const isShared = folder.needsReview || folder.reviewed
+  // const icon = isNew
+  //   ? VioletFolder
+  //   : isShared
+  //   ? BlueFolder
+  //   : YellowFolderUnshared
+  const icon = BlueFolder
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
   fileDetailProxy.editing = editing
@@ -113,9 +119,7 @@ export const FolderDetail = ({
       <DrawerHeader p="0">
         <PanelHeader
           handleCloseButton={handleClose}
-          icon={
-            isNew ? VioletFolder : isShared ? BlueFolder : YellowFolderUnshared
-          }
+          icon={icon}
           title={folderName}
         />
       </DrawerHeader>
