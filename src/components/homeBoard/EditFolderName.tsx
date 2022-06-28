@@ -2,20 +2,37 @@ import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { TextInput } from '../inputs'
 
-export const EditFolderName = () => {
+interface EditFolderNameI {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleEditFolderName: () => void
+  value: string
+}
+
+export const EditFolderName = ({
+  handleChange,
+  handleEditFolderName,
+  value,
+}: EditFolderNameI) => {
   return (
     <Box bg="container.tertiary" w="100%" p="base">
       <Flex gap="base" align="center">
-        <Text fontFamily='secondary' minW="fit-content">
+        <Text fontFamily="secondary" minW="fit-content">
           {t('folderSharing.details.name')}
         </Text>
         <TextInput
-          handleChange={(event) => event}
+          handleChange={handleChange}
           id={'1'}
           placeholder={t('folderSharing.details.placeholder')}
-          value={''}
+          value={value}
+          isDisabled
         />
-        <Button variant="secondary" maxW="fit-content" maxH="input.md">
+        <Button
+          variant="secondary"
+          maxW="fit-content"
+          maxH="input.md"
+          disabled={!value || true}
+          onClick={handleEditFolderName}
+        >
           {t('createDocument.buttons.save')}
         </Button>
       </Flex>

@@ -24,7 +24,8 @@ import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
 import { Files } from './Files'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
-import { fileDetailProxy } from '../../proxies/fileDetail.proxy';
+import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
+import EditFolderName from './EditFolderName'
 
 export const FolderDetail = ({
   addedBy,
@@ -52,12 +53,15 @@ export const FolderDetail = ({
     errorMessage,
     getRootProps,
     getInputProps,
+    handleChange,
     handleFileUpdate,
     handleMapFile,
     hasError,
+    folderName,
     setAcceptedFiles,
-    setTotalFiles,
+    setFolderName,
     setIsUploading,
+    setTotalFiles,
     totalFiles,
   } = useFolderDetail()
 
@@ -67,6 +71,21 @@ export const FolderDetail = ({
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
   fileDetailProxy.editing = editing
+
+  const sortMenu = [
+    {
+      _id: '1',
+      name: t('folderSharing.sort.date'),
+    },
+    {
+      _id: '2',
+      name: t('folderSharing.sort.name'),
+    },
+    {
+      _id: '3',
+      name: t('folderSharing.sort.type'),
+    },
+  ]
 
   useMemo(() => {
     setDbFiles(handleMapFile({ files, isLocal: false }))
@@ -81,6 +100,10 @@ export const FolderDetail = ({
   }, [acceptedFiles])
 
   useEffect(() => {
+    setFolderName(folder?.type)
+  }, [folder.type])
+
+  useEffect(() => {
     setIsUploading(uploading)
     !uploading && setAcceptedFiles([])
   }, [uploading])
@@ -93,10 +116,25 @@ export const FolderDetail = ({
           icon={
             isNew ? VioletFolder : isShared ? BlueFolder : YellowFolderUnshared
           }
-          title={folder?.type || ''}
+          title={folderName}
         />
       </DrawerHeader>
-      <SortHeader />
+      <EditFolderName
+        handleChange={() => {
+          // ADD handleChange function
+        }}
+        handleEditFolderName={() => {
+          // ADD handleEditFolderName function
+        }}
+        value={folderName}
+      />
+      <SortHeader
+        handleSelect={({ _id }) => {
+          // ADD handleSelect function
+        }}
+        initialSelectValue={sortMenu[0].name}
+        selectItems={sortMenu}
+      />
       <DrawerBody p="0" bg="white">
         <Stack spacing="4" w="full" p="base" h="100%">
           {folder.type.toLowerCase() !== 'construction' && (

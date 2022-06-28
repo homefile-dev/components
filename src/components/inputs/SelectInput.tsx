@@ -32,8 +32,8 @@ export const SelectInput = ({
         _hover={{ borderColor: 'input.borderHover' }}
         _focus={{ borderColor: 'input.borderFocus' }}
         _disabled={{
-          bg: 'container.neutralBlue',
-          color: 'container.neutral',
+          bg: 'container.transparent',
+          color: 'container.neutral', 
           pointerEvents: 'none',
         }}
       >

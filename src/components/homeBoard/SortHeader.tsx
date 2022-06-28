@@ -5,6 +5,7 @@ import { CustomIcon } from '../icons/CustomIcon'
 import SelectInput from '../inputs/SelectInput'
 
 export const SortHeader = ({
+  handleSelect,
   initialSelectValue = '',
   selectItems = undefined,
 }: SortHeaderI) => {
@@ -13,8 +14,9 @@ export const SortHeader = ({
       <Flex justify="space-between" align="center">
         {selectItems ? (
           <SelectInput
-            handleClick={(form) => form}
+            handleClick={handleSelect}
             initailValue={initialSelectValue}
+            isDisabled
             items={selectItems}
           />
         ) : (

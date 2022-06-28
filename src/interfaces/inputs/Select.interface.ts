@@ -1,6 +1,6 @@
 export interface SelectItemI {
-  name: string
   _id: string
+  name: string
 }
 
 export interface SelectI {

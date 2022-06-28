@@ -14,6 +14,7 @@ export const useFolderDetail = () => {
   const [acceptedFiles, setAcceptedFiles] = useState<FolderFileI[]>([])
   const [totalFiles, setTotalFiles] = useState<FolderFileI[]>([])
   const [isUploading, setIsUploading] = useState(false)
+  const [folderName, setFolderName] = useState('')
   const { REACT_APP_STORAGE_URL: storageUrl } = process.env
 
   const handleMapFile = ({ files, isLocal = true }: MapFileI) => {
@@ -76,6 +77,10 @@ export const useFolderDetail = () => {
     }
   }
 
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+     setFolderName(e.target.value)
+   }
+
   useEffect(() => {
     if (hasError) {
       setTimeout(() => {
@@ -90,12 +95,15 @@ export const useFolderDetail = () => {
     errorMessage,
     getRootProps,
     getInputProps,
+    handleChange,
     handleFileUpdate,
     handleMapFile,
     hasError,
+    folderName,
     setAcceptedFiles,
-    setTotalFiles,
+    setFolderName,
     setIsUploading,
+    setTotalFiles,
     totalFiles,
   }
 }

@@ -74,13 +74,17 @@ export const FolderSharing = ({
               },
               index
             ) => {
-              const isNew = status?.toLowerCase() === 'new'
-              const isShared = needsReview || reviewed
-              const icon = isNew
-                ? VioletFolder
-                : isShared
-                ? BlueFolder
-                : YellowFolderUnshared
+              // const isNew = status?.toLowerCase() === 'new'
+              // const isShared = needsReview || reviewed
+              // const icon = isNew
+              //   ? VioletFolder
+              //   : isShared
+              //   ? BlueFolder
+              //   : YellowFolderUnshared
+
+              const isNew = false
+              const isShared = false
+              const icon = BlueFolder
               return (
                 <WrapItem position="relative" key={type + index}>
                   {!deleted && (
@@ -111,11 +115,13 @@ export const FolderSharing = ({
                             width="3.4rem"
                           />
                         ) : (
-                          <TextBagde
-                            bgColor="container.warning"
-                            text={t('badges.private')}
-                            width="3.4rem"
-                          />
+                          false && (
+                            <TextBagde
+                              bgColor="container.warning"
+                              text={t('badges.private')}
+                              width="3.4rem"
+                            />
+                          )
                         )}
                       </Flex>
                       <Flex direction="column" gap="base" align="center">

@@ -77,7 +77,12 @@
       "tab2": "Shared with"
     },
     "newFolder": "new",
-    "title": "Files"
+    "title": "Files",
+    "sort": {
+      "date": "By Date",
+      "name": "By Name",
+      "type": "By Type"
+    }
   },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
