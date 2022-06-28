@@ -63,12 +63,6 @@ export const useFolderDetail = () => {
     },
   })
 
-  const findIndex = (value: string) => {
-    return totalFiles.findIndex(
-      (file: FolderFileI) => file.title || file._id === value
-    )
-  }
-
   const getFile = (id: string) => {
     return totalFiles.find((file: FolderFileI) => file._id === id)
   }
@@ -81,12 +75,6 @@ export const useFolderDetail = () => {
       description: fileDetailProxy.description,
     }
   }
-
-  const removeFile = (id: string) => {
-    totalFiles.splice(findIndex(id), 1)
-    setTotalFiles([...totalFiles])
-  }
-  
 
   useEffect(() => {
     if (hasError) {
@@ -105,7 +93,6 @@ export const useFolderDetail = () => {
     handleFileUpdate,
     handleMapFile,
     hasError,
-    removeFile,
     setAcceptedFiles,
     setTotalFiles,
     setIsUploading,

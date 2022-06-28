@@ -1,6 +1,7 @@
-import { Stack, Flex, Text, Button, Image, Box } from '@chakra-ui/react'
+import { Stack, Flex, Text, Button, Image, Box, Center } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { useState } from 'react'
+import { BeatLoader } from 'react-spinners'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { TextInput } from '../inputs'
 
@@ -17,6 +18,7 @@ export const DetailsTab = ({
     addedAt,
     addedBy,
     description: descriptionProxy,
+    editing,
     icon,
     name,
     _id,
@@ -24,7 +26,11 @@ export const DetailsTab = ({
   const [fileName, setFileName] = useState(name)
   const [description, setDescription] = useState(descriptionProxy)
 
-  return (
+  return editing ? (
+    <Center h="6rem">
+      <BeatLoader color="gray" size={6} />
+    </Center>
+  ) : (
     <Stack spacing="base">
       <Flex gap="base" align="center">
         <Image src={icon} w="auto" h="3rem" alt={t('folderSharing.altIcon')} />

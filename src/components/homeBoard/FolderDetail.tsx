@@ -24,11 +24,12 @@ import { useState, useMemo, useEffect } from 'react'
 import { SortHeader } from './SortHeader'
 import { Files } from './Files'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
-import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
+import { fileDetailProxy } from '../../proxies/fileDetail.proxy';
 
 export const FolderDetail = ({
   addedBy,
   children,
+  editing,
   files,
   folder,
   handleClose,
@@ -54,7 +55,6 @@ export const FolderDetail = ({
     handleFileUpdate,
     handleMapFile,
     hasError,
-    removeFile,
     setAcceptedFiles,
     setTotalFiles,
     setIsUploading,
@@ -66,6 +66,7 @@ export const FolderDetail = ({
   const isShared = folder.needsReview || folder.reviewed
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
+  fileDetailProxy.editing = editing
 
   useMemo(() => {
     setDbFiles(handleMapFile({ files, isLocal: false }))
@@ -111,10 +112,7 @@ export const FolderDetail = ({
               <Files
                 files={totalFiles}
                 handleAddRecipient={handleAddRecipient}
-                handleDeleteFile={(id) => {
-                  handleDeleteFile(id)
-                  removeFile(id)
-                }}
+                handleDeleteFile={(id) => handleDeleteFile(id)}
                 handleDeleteRecipient={handleDeleteRecipient}
                 handleEditDescription={(id) => {
                   const file = handleFileUpdate(id)

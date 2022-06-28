@@ -44,6 +44,7 @@ export const HomeBoard = () => {
           <FolderDetail
             addedBy="First name and last name"
             children={<h1>Hello World</h1>}
+            editing={false}
             folder={selectedFolder}
             handleAddRecipient={(email) => email}
             handleClose={onRightClose}

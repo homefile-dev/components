@@ -18,6 +18,7 @@ import { RecipientTab } from '../sendCommunication'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
 export const FileDetail = ({
+  editing,
   handleAddRecipient,
   handleEditDescription,
   handleEditFileName,
