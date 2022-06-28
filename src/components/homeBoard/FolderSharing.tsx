@@ -36,7 +36,7 @@ export const FolderSharing = ({
   const { width } = useWindowDimensions()
   const isDesktop = width > 800
   return (
-    <Container variant="launchpad" minW={isDesktop ? '60%' : 'full'}>
+    <Container variant="launchpad" minW={isDesktop ? '62%' : 'full'}>
       <ContainerHeader
         disabled
         title={t('folderSharing.title')}
@@ -60,7 +60,7 @@ export const FolderSharing = ({
           />
         </Flex>
       </Box>
-      <Wrap py="8" px="base" spacing="base">
+      <Wrap py="8" px="base" spacing="2">
         {folders &&
           folders.map(
             (
@@ -86,55 +86,54 @@ export const FolderSharing = ({
               const isShared = false
               const icon = BlueFolder
               return (
-                <WrapItem position="relative" key={type + index}>
-                  {!deleted && (
-                    <Button
-                      variant="folder"
-                      px="base"
-                      pb="base"
-                      pt="6"
-                      onClick={() => {
-                        handleFolderClick({
-                          deleted,
-                          needsReview,
-                          reviewed,
-                          status,
-                          subTypes,
-                          type,
-                        })
-                        folderHeaderProxy.icon = icon
-                        folderHeaderProxy.title = type
-                      }}
-                    >
-                      <Flex gap="1" position="absolute" top="-1" left="base">
-                        {isNew && <TextBagde />}
-                        {isShared ? (
+                <WrapItem w="6rem" key={type + index}>
+                  <Button
+                    variant="folder"
+                    position="relative"
+                    px="base"
+                    pb="base"
+                    pt="6"
+                    onClick={() => {
+                      handleFolderClick({
+                        deleted,
+                        needsReview,
+                        reviewed,
+                        status,
+                        subTypes,
+                        type,
+                      })
+                      folderHeaderProxy.icon = icon
+                      folderHeaderProxy.title = type
+                    }}
+                  >
+                    <Flex gap="1" position="absolute" top="-1" left="base">
+                      {isNew && <TextBagde />}
+                      {isShared ? (
+                        <TextBagde
+                          bgColor="container.blue"
+                          text={t('badges.shared')}
+                          width="3.4rem"
+                        />
+                      ) : (
+                        false && (
                           <TextBagde
-                            bgColor="container.blue"
-                            text={t('badges.shared')}
+                            bgColor="container.warning"
+                            text={t('badges.private')}
                             width="3.4rem"
                           />
-                        ) : (
-                          false && (
-                            <TextBagde
-                              bgColor="container.warning"
-                              text={t('badges.private')}
-                              width="3.4rem"
-                            />
-                          )
-                        )}
-                      </Flex>
-                      <Flex direction="column" gap="base" align="center">
-                        <Image
-                          src={icon}
-                          w="3.7rem"
-                          h="auto"
-                          alt={t('folderSharing.altIcon')}
-                        />
-                        <Text fontSize="sm">{type}</Text>
-                      </Flex>
-                    </Button>
-                  )}
+                        )
+                      )}
+                    </Flex>
+                    <Flex direction="column" gap="base" align="center">
+                      <Image
+                        src={icon}
+                        w="3.7rem"
+                        h="auto"
+                        alt={t('folderSharing.altIcon')}
+                      />
+                      <Text fontSize="sm">{type}</Text>
+                    </Flex>
+                  </Button>
                 </WrapItem>
               )
             }
