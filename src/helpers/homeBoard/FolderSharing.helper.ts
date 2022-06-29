@@ -194,7 +194,7 @@ export const fileDB: ReportsI[] = [
       },
     ],
     type: 'Construction',
-    subType: 'Progress Report',
+    subType: 'image',
     needsReview: false,
     reviewed: false,
     images: [],

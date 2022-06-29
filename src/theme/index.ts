@@ -6,6 +6,7 @@ import Container from './components/ContainerStyles'
 import Text from './components/TextStyles'
 import Input from './components/InputStyles'
 import Select from './components/SelectStyles'
+import Checkbox from './components/CheckboxStyles';
 
 const theme = extendTheme({
   styles: {
@@ -33,6 +34,7 @@ const theme = extendTheme({
     Text,
     Input,
     Select,
+    Checkbox,
   },
   colors: {
     avatar: {

@@ -4,8 +4,9 @@ export interface SelectItemI {
 }
 
 export interface SelectI {
-  handleClick: (form: SelectItemI) => void
+  handleClick: (form: SelectItemI | string) => void
   initailValue: string
   isDisabled?: boolean
-  items: SelectItemI[]
+  items: SelectItemI[] | string[]
+  width?: string
 }

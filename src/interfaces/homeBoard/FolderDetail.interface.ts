@@ -2,6 +2,7 @@ import { FileI } from './File.interface'
 import { FolderI } from './FolderSharing.interface'
 import { RecipientI } from '../sendCommunication/AddRecipient.interface'
 import { ImageDBI } from '../sendCommunication/AddMedia.interface'
+import { SelectItemI } from '../inputs/Select.interface'
 
 export interface FolderDetailI {
   addedBy: string
@@ -17,7 +18,9 @@ export interface FolderDetailI {
   handleEditDescription: (file: FolderFileI) => void
   handleEditFileName: (file: FolderFileI) => void
   handleFileClick: (file: FolderFileI) => void
+  handleFilter: (filter: SelectItemI | string) => void
   handleOpenFile: (file: FolderFileI) => void
+  handleSharedFilter: (checked: boolean) => void
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
   panelSize?: string

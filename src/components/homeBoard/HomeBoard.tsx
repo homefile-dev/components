@@ -54,7 +54,9 @@ export const HomeBoard = () => {
             handleEditDescription={(file) => file}
             handleEditFileName={(file) => file}
             handleFileClick={(file) => file}
+            handleFilter={(filter) => filter}
             handleOpenFile={(file) => file}
+            handleSharedFilter={(filter) => filter}
             files={fileDB}
             handleUpload={() => {}}
             loading={false}

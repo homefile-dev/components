@@ -66,23 +66,33 @@
       "errorSize": "Please select a file less than 5MB",
       "errorType": "File type must be .jpeg, .jpg, .pdf, .txt, .doc or .docx"
     },
+    "filters": {
+      "shared": "Shared"
+    },
     "menu": {
       "delete": "Delete File",
       "details": "View Details",
       "download": "Download",
       "share": "Share"
     },
-    "tabs": {
-      "tab1": "Details",
-      "tab2": "Shared with"
-    },
     "newFolder": "new",
-    "title": "Files",
     "sort": {
       "date": "By Date",
       "name": "By Name",
       "type": "By Type"
-    }
+    },
+    "showing": {
+      "part1": "Showing",
+      "part2": "of",
+      "part3": "Documents",
+      "part4": "Document"
+    },
+    "tabs": {
+      "tab1": "Details",
+      "tab2": "Shared with"
+    },
+    "title": "Files"
+    
   },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",

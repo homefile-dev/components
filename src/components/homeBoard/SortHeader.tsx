@@ -6,19 +6,31 @@ import SelectInput from '../inputs/SelectInput'
 
 export const SortHeader = ({
   handleSelect,
+  initialSelectTypeValue = 'All',
   initialSelectValue = '',
   selectItems = undefined,
+  selectTypeItems = null,
 }: SortHeaderI) => {
   return (
     <Box bg="container.neutralBlue" py="2" pl="base" w="100%">
       <Flex justify="space-between" align="center">
         {selectItems ? (
-          <SelectInput
-            handleClick={handleSelect}
-            initailValue={initialSelectValue}
-            isDisabled
-            items={selectItems}
-          />
+          <Flex gap="base" align="center">
+            {selectTypeItems && (
+              <SelectInput
+                handleClick={handleSelect}
+                initailValue={initialSelectTypeValue}
+                items={selectTypeItems}
+              />
+            )}
+            <SelectInput
+              handleClick={handleSelect}
+              initailValue={initialSelectValue}
+              isDisabled
+              items={selectItems}
+              width="8rem"
+            />
+          </Flex>
         ) : (
           <Box />
         )}

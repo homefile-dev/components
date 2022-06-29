@@ -14,6 +14,7 @@ import { PanelHeader } from '../headers'
 import {
   BlueFolder,
   VioletFolder,
+  YellowFolder,
   YellowFolderUnshared,
 } from '../../assets/images'
 import { DragDropArea } from '../dragDrop/DragDropArea'
@@ -26,6 +27,7 @@ import { Files } from './Files'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import EditFolderName from './EditFolderName'
+import { SharedFilter } from './SharedFilter'
 
 export const FolderDetail = ({
   addedBy,
@@ -41,7 +43,9 @@ export const FolderDetail = ({
   handleDeleteFolder,
   handleDeleteRecipient,
   handleFileClick,
+  handleFilter,
   handleOpenFile,
+  handleSharedFilter,
   handleUpload = () => {},
   loading,
   panelSize = 'md',
@@ -73,7 +77,8 @@ export const FolderDetail = ({
   //   : isShared
   //   ? BlueFolder
   //   : YellowFolderUnshared
-  const icon = BlueFolder
+  const icon = YellowFolder
+  const isConstruction = folder.type.toLowerCase() === 'construction'
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
   fileDetailProxy.editing = editing
@@ -133,15 +138,19 @@ export const FolderDetail = ({
         value={folderName}
       />
       <SortHeader
-        handleSelect={({ _id }) => {
-          // ADD handleSelect function
-        }}
+        handleSelect={(form) => handleFilter(form)}
         initialSelectValue={sortMenu[0].name}
         selectItems={sortMenu}
+        selectTypeItems={isConstruction ? folder.subTypes : null}
+      />
+      <SharedFilter
+        handleSharedFilter={handleSharedFilter}
+        totalFiles={files.length}
+        showingFiles={files.length}
       />
       <DrawerBody p="0" bg="white">
         <Stack spacing="4" w="full" p="base" h="100%">
-          {folder.type.toLowerCase() !== 'construction' && (
+          {!isConstruction && (
             <DragDropArea
               errorMessage={errorMessage}
               getInputProps={getInputProps}

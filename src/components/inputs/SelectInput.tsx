@@ -16,13 +16,14 @@ export const SelectInput = ({
   initailValue,
   isDisabled,
   items,
+  width = '10rem',
 }: SelectI) => {
   const [selectedValue, setSelectedValue] = useState<string>(initailValue)
   return (
     <Menu>
       <MenuButton
         disabled={isDisabled}
-        w="12rem"
+        w={width}
         bg="white"
         h="input.sm"
         px="2"
@@ -33,7 +34,7 @@ export const SelectInput = ({
         _focus={{ borderColor: 'input.borderFocus' }}
         _disabled={{
           bg: 'container.transparent',
-          color: 'container.neutral', 
+          color: 'container.neutral',
           pointerEvents: 'none',
         }}
       >
@@ -45,23 +46,28 @@ export const SelectInput = ({
         </Flex>
       </MenuButton>
       <MenuList zIndex="dropdown">
-        {items?.map((item) => (
-          <MenuItem
-            key={item._id}
-            onClick={() => {
-              handleClick(item)
-              setSelectedValue(item.name)
-            }}
-            _hover={{
-              bg: 'container.secondary',
-            }}
-            _focus={{
-              bg: 'container.secondary',
-            }}
-          >
-            {item.name}
-          </MenuItem>
-        ))}
+        {items?.map((item) => {
+          const isSelectItem = typeof item === 'object'
+          const id = isSelectItem ? item._id : item
+          const name = isSelectItem ? item.name : item
+          return (
+            <MenuItem
+              key={id}
+              onClick={() => {
+                handleClick(item)
+                setSelectedValue(name)
+              }}
+              _hover={{
+                bg: 'container.secondary',
+              }}
+              _focus={{
+                bg: 'container.secondary',
+              }}
+            >
+              {name}
+            </MenuItem>
+          )
+        })}
       </MenuList>
     </Menu>
   )
