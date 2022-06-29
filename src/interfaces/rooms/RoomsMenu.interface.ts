@@ -1,7 +1,7 @@
 export interface RoomItemI {
   icon: string
   id: string
-  index?: number
+  index: number
   label: string
 }
 

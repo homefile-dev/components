@@ -84,7 +84,7 @@ export const FolderSharing = ({
 
               const isNew = false
               const isShared = false
-              const icon = BlueFolder
+              const icon = YellowFolder
               return (
                 <WrapItem w="6rem" key={type + index}>
                   <Button

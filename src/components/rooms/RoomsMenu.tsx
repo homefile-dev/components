@@ -2,11 +2,15 @@ import { Box, Text, Flex, Center } from '@chakra-ui/react'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { CustomIcon } from '../icons/CustomIcon'
 import { RoomCard } from './RoomCard'
-import { RoomsMenuI } from '../../interfaces/rooms/RoomsMenu.interface'
+import {
+  RoomItemI,
+  RoomsMenuI,
+} from '../../interfaces/rooms/RoomsMenu.interface'
 import { useState } from 'react'
 
 export const RoomsMenu = ({ rooms }: RoomsMenuI) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [sortedRooms, setSortedRooms] = useState<RoomItemI[]>(rooms)
   return (
     <Box
       w={isOpen ? '16rem' : 'container.roomIcon'}
@@ -33,16 +37,22 @@ export const RoomsMenu = ({ rooms }: RoomsMenuI) => {
               <CustomIcon type={HiOutlinePlus} size="6" color="white" />
             </Center>
             <Box>
-              <Text color="white" textTransform="uppercase">Add room</Text>
+              <Text color="white" textTransform="uppercase">
+                Add room
+              </Text>
             </Box>
           </Flex>
         </Box>
       </Box>
       <Box>
-        {rooms.map(({ icon, id, label }, index) => {
+        {sortedRooms.map(({ icon, id, label, index }, i) => {
           return (
             <Box key={id}>
-              <RoomCard icon={icon} label={label} />
+              <RoomCard
+                icon={icon}
+                index={index}
+                label={label}
+              />
               {index !== rooms.length - 1 && (
                 <Box
                   h="1px"

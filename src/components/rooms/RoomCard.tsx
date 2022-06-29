@@ -4,13 +4,13 @@ import { FiMenu } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
 
 interface RoomCardI {
-  handleDragDrop?: (e: React.DragEvent<HTMLDivElement>) => void
   icon: string
+  index: number
   label: string
 }
-export const RoomCard = ({ icon, label }: RoomCardI) => {
+export const RoomCard = ({ icon, index, label }: RoomCardI) => {
   return (
-    <Box draggable overflow="hidden">
+    <Box draggable overflow="hidden" onMouseLeave={() => {}}>
       <Box
         w="full"
         as="button"
