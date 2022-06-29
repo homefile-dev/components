@@ -1,6 +1,6 @@
 {
   "name": "@homefile-dev/components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "author": "Homefile",
   "license": "UNLICENSED",
   "typings": "dist/index.d.ts",
