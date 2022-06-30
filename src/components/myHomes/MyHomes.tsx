@@ -7,7 +7,6 @@ import House from '../../assets/images/house.svg'
 import MyHomesHeader from './headers/MyHomesHeader'
 import HomeCard from './HomeCard'
 import { MyHomesI } from '../../interfaces/myHomes/MyHomes.interface'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const MyHomes = ({
   cardFilters,
