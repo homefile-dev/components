@@ -5,12 +5,14 @@ import { TextInput } from '../inputs'
 interface EditFolderNameI {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   handleEditFolderName: () => void
+  isDisabled?: boolean
   value: string
 }
 
 export const EditFolderName = ({
   handleChange,
   handleEditFolderName,
+  isDisabled = true,
   value,
 }: EditFolderNameI) => {
   return (
@@ -24,13 +26,13 @@ export const EditFolderName = ({
           id={'1'}
           placeholder={t('folderSharing.details.placeholder')}
           value={value}
-          isDisabled
+          isDisabled={isDisabled}
         />
         <Button
           variant="secondary"
           maxW="fit-content"
           maxH="input.md"
-          disabled={!value || true}
+          disabled={!value || isDisabled}
           onClick={handleEditFolderName}
         >
           {t('createDocument.buttons.save')}
