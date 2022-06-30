@@ -72,7 +72,6 @@ export const RecipientTab = ({
         </Center>
       ) : (
         <Stack
-          bg={recipients?.length ? 'container.neutralBlue' : 'transparent'}
           p="base"
           minH="full"
           w="100%"
