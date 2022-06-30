@@ -53,6 +53,12 @@
     "message2": "browse"
   },
   "folderSharing": {
+    "addFolder": {
+      "title": "Add Folder",
+      "cancel": "Cancel",
+      "create": "Create another",
+      "close": "Close"
+    },
     "altIcon": "Folder",
     "details": {
       "added": "Added",
@@ -89,10 +95,10 @@
     },
     "tabs": {
       "tab1": "Details",
-      "tab2": "Shared with"
+      "tab2": "Shared with",
+      "tab3": "Shared folder with"
     },
     "title": "Files"
-    
   },
   "footer": {
     "copyright": "© 2021 Homefile Inc. All Rights Reserved.",
