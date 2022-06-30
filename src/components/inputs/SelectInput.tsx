@@ -64,7 +64,7 @@ export const SelectInput = ({
                 bg: 'container.secondary',
               }}
             >
-              {name}
+              <Text variant="info">{name}</Text>
             </MenuItem>
           )
         })}
