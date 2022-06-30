@@ -19,10 +19,11 @@ export const MyHomes = ({
   return (
     <Container variant="launchpad" maxW="63rem" pb="3rem">
       <ContainerHeader
-        title={t('myHomes.title')}
-        titleIcon={House}
+        disabled
         menuItems={headerMenuItems}
         icon={<CustomIcon type={FiMoreHorizontal} size="8" />}
+        title={t('myHomes.title')}
+        titleIcon={House}
       />
       <MyHomesHeader
         cardFilters={cardFilters}
