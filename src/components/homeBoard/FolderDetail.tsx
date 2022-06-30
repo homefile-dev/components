@@ -78,7 +78,6 @@ export const FolderDetail = ({
   //   ? BlueFolder
   //   : YellowFolderUnshared
   const icon = YellowFolder
-  const isConstruction = folder.type.toLowerCase() === 'construction'
   const typesOptions = ['All', ...folder.subTypes]
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
@@ -142,7 +141,7 @@ export const FolderDetail = ({
         handleSelect={(form) => handleFilter(form)}
         initialSelectValue={sortMenu[0].name}
         selectItems={sortMenu}
-        selectTypeItems={isConstruction ? typesOptions : null}
+        selectTypeItems={typesOptions}
       />
       <SharedFilter
         handleSharedFilter={handleSharedFilter}
