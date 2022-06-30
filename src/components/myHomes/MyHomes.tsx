@@ -17,7 +17,6 @@ export const MyHomes = ({
   handleNewHomeClick,
   headerMenuItems,
 }: MyHomesI) => {
-  const { width } = useWindowDimensions()
   return (
     <Container variant="launchpad" maxW="63rem" pb="3rem">
       <ContainerHeader
