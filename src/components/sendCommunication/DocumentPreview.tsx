@@ -43,6 +43,7 @@ export const DocumentPreview = ({
       buttonStyle: 'primaryFooter',
       label: t('createDocument.buttons.send'),
       onClick: handleSend,
+      width: '10rem',
     },
     cancel: {
       buttonStyle: 'secondaryFooter',
