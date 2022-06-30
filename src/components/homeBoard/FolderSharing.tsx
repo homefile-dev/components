@@ -27,6 +27,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export const FolderSharing = ({
   folders,
+  handleAddNewFolder,
   handleFolderClick,
   handleSelect,
   initialSelectItem,
@@ -52,12 +53,7 @@ export const FolderSharing = ({
             isDisabled
             items={selectItems}
           />
-          <LeftButtonAnimated
-            handleClick={() => {
-              //TODO: implement handle click
-            }}
-            label="Folder"
-          />
+          <LeftButtonAnimated handleClick={handleAddNewFolder} label="Folder" />
         </Flex>
       </Box>
       <Wrap py="8" px="base" spacing="2">

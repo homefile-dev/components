@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof FolderSharing> = () => {
       folders={FoldersDB}
       handleFolderClick={() => {}}
       handleSelect={() => {}}
+      handleAddNewFolder={() => {}}
       initialSelectItem={selectOptions[0]}
       menuItems={[
         {

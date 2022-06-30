@@ -12,6 +12,7 @@ export interface FolderI {
 
 export interface FolderSharingI {
   folders?: FolderI[] | null
+  handleAddNewFolder: () => void
   handleFolderClick: (folder: FolderI) => void
   handleSelect: (form: SelectItemI | string) => void
   initialSelectItem: SelectItemI
