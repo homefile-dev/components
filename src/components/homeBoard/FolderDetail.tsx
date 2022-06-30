@@ -79,6 +79,7 @@ export const FolderDetail = ({
   //   : YellowFolderUnshared
   const icon = YellowFolder
   const isConstruction = folder.type.toLowerCase() === 'construction'
+  const typesOptions = ['All', ...folder.subTypes]
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
   fileDetailProxy.editing = editing
@@ -141,7 +142,7 @@ export const FolderDetail = ({
         handleSelect={(form) => handleFilter(form)}
         initialSelectValue={sortMenu[0].name}
         selectItems={sortMenu}
-        selectTypeItems={isConstruction ? folder.subTypes : null}
+        selectTypeItems={isConstruction ? typesOptions : null}
       />
       <SharedFilter
         handleSharedFilter={handleSharedFilter}
@@ -150,14 +151,12 @@ export const FolderDetail = ({
       />
       <DrawerBody p="0" bg="white">
         <Stack spacing="4" w="full" p="base" h="100%">
-          {!isConstruction && (
-            <DragDropArea
-              errorMessage={errorMessage}
-              getInputProps={getInputProps}
-              getRootProps={getRootProps}
-              hasError={hasError}
-            />
-          )}
+          <DragDropArea
+            errorMessage={errorMessage}
+            getInputProps={getInputProps}
+            getRootProps={getRootProps}
+            hasError={hasError}
+          />
           <DragDropLoading
             children={
               <Files
