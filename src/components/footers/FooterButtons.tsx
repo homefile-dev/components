@@ -13,7 +13,7 @@ export const FooterButtons = ({
           <Button
             variant={button1.buttonStyle}
             onClick={button1.onClick}
-            size="small"
+            w={button1.width || 'fit-content'}
             disabled={button1.isDisabled}
           >
             {button1.label}
@@ -25,7 +25,7 @@ export const FooterButtons = ({
           <Button
             variant={button2.buttonStyle}
             onClick={button2.onClick}
-            maxW="fit-content"
+            w={button2.width || 'fit-content'}
             disabled={button2.isDisabled}
           >
             {button2.label}
@@ -36,7 +36,7 @@ export const FooterButtons = ({
         <Button
           variant={button3.buttonStyle}
           onClick={button3.onClick}
-          maxW="fit-content"
+          w={button3.width || 'fit-content'}
           disabled={button3.isDisabled}
         >
           {button3.label}

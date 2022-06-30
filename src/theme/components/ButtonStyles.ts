@@ -268,6 +268,7 @@ const Button = {
       },
     },
     primaryFooter: {
+      px: '1rem',
       fontSize: 'md',
       textTransform: 'uppercase',
       h: 'button.xxs',

@@ -3,6 +3,7 @@ export interface FooterButtonI {
   isDisabled?: boolean
   label: string
   onClick: () => void
+  width?: string
 }
 
 export interface FooterButtonsI {
