@@ -1,4 +1,4 @@
-import { Box, Container, SimpleGrid, Wrap } from '@chakra-ui/react'
+import { Box, Container, Wrap } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
@@ -18,7 +18,6 @@ export const MyHomes = ({
   headerMenuItems,
 }: MyHomesI) => {
   const { width } = useWindowDimensions()
-  const isSmallMobile = width < 400
   return (
     <Container variant="launchpad" maxW="63rem" pb="3rem">
       <ContainerHeader
