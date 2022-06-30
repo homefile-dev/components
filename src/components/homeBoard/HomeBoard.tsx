@@ -18,6 +18,7 @@ import { FolderI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import { useState } from 'react'
 import { RoomsMenu } from '../rooms/RoomsMenu'
 import { RoomsList } from '../../helpers/rooms/RoomsList'
+import { AddFolder } from './AddFolder'
 
 export const HomeBoard = () => {
   const homeName = 'The Edmunds'
@@ -28,6 +29,7 @@ export const HomeBoard = () => {
     onClose: onRightClose,
   } = useDisclosure()
 
+  const [isNewFolder, setIsNewFolder] = useState(false)
   const [selectedFolder, setSelectedFolder] = useState<FolderI>({
     deleted: false,
     needsReview: false,
@@ -41,36 +43,40 @@ export const HomeBoard = () => {
     <Box w="full">
       <RightPanel
         children={
-          <FolderDetail
-            addedBy="First name and last name"
-            children={<h1>Hello World</h1>}
-            editing={false}
-            folder={selectedFolder}
-            handleAddRecipient={(email) => email}
-            handleClose={onRightClose}
-            handleDeleteFile={(id) => id}
-            handleDeleteFolder={(id) => id}
-            handleDeleteRecipient={(email) => email}
-            handleEditDescription={(file) => file}
-            handleEditFileName={(file) => file}
-            handleFileClick={(file) => file}
-            handleFilter={(filter) => filter}
-            handleOpenFile={(file) => file}
-            handleSharedFilter={(filter) => filter}
-            files={fileDB}
-            handleUpload={() => {}}
-            loading={false}
-            panelSize="md"
-            recipients={[
-              {
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'user@user.com',
-                phone: '32329099',
-              },
-            ]}
-            uploading={false}
-          />
+          isNewFolder ? (
+            <AddFolder handleClose={onRightClose} />
+          ) : (
+            <FolderDetail
+              addedBy="First name and last name"
+              children={<h1>Hello World</h1>}
+              editing={false}
+              folder={selectedFolder}
+              handleAddRecipient={(email) => email}
+              handleClose={onRightClose}
+              handleDeleteFile={(id) => id}
+              handleDeleteFolder={(id) => id}
+              handleDeleteRecipient={(email) => email}
+              handleEditDescription={(file) => file}
+              handleEditFileName={(file) => file}
+              handleFileClick={(file) => file}
+              handleFilter={(filter) => filter}
+              handleOpenFile={(file) => file}
+              handleSharedFilter={(filter) => filter}
+              files={fileDB}
+              handleUpload={() => {}}
+              loading={false}
+              panelSize="md"
+              recipients={[
+                {
+                  firstName: 'John',
+                  lastName: 'Doe',
+                  email: 'user@user.com',
+                  phone: '32329099',
+                },
+              ]}
+              uploading={false}
+            />
+          )
         }
         isOpen={isRightOpen}
         onClose={onRightClose}
@@ -109,7 +115,12 @@ export const HomeBoard = () => {
               >
                 <FolderSharing
                   folders={FoldersDB}
+                  handleAddNewFolder={() => {
+                    setIsNewFolder(true)
+                    onRightOpen()
+                  }}
                   handleFolderClick={(folder) => {
+                    setIsNewFolder(false)
                     setSelectedFolder(folder)
                     onRightOpen()
                   }}
