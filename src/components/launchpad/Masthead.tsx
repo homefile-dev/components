@@ -1,13 +1,18 @@
 import { Avatar, Button, Container, Flex, Image, Text } from '@chakra-ui/react'
 import { BsChevronDown } from 'react-icons/bs'
-import {Logo, LogoSmall} from '../../assets/images'
+import { Logo, LogoSmall } from '../../assets/images'
 import IconMenu from './IconMenu'
 import { CustomIcon } from '../icons/CustomIcon'
 import { MastheadI } from '../../interfaces/launchpad/Masthead.interface'
 import { t } from 'i18next'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
-export const Masthead = ({ avatarUrl = '', handleClick, menuItems, userName }: MastheadI) => {
+export const Masthead = ({
+  avatarUrl = '',
+  handleClick,
+  menuItems,
+  userName,
+}: MastheadI) => {
   const firstName = userName?.split(' ')[0]
   const { width } = useWindowDimensions()
   const isSmallMobile = width < 400
@@ -37,6 +42,7 @@ export const Masthead = ({ avatarUrl = '', handleClick, menuItems, userName }: M
             color="white"
           />
           <IconMenu
+            disabled
             icon={<CustomIcon type={BsChevronDown} />}
             menuItems={menuItems}
           />
