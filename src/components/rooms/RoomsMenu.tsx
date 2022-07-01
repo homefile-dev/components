@@ -16,7 +16,7 @@ export const RoomsMenu = ({ rooms }: RoomsMenuI) => {
       w={isOpen ? '16rem' : 'container.roomIcon'}
       minW={isOpen ? '16rem' : 'container.roomIcon'}
       transition="all 0.2s ease-in-out"
-      bg="white"
+      bg="container.primary"
     >
       <Box overflow="hidden">
         <Box
