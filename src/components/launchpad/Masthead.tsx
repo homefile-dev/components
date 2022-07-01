@@ -42,7 +42,6 @@ export const Masthead = ({
             color="white"
           />
           <IconMenu
-            disabled
             icon={<CustomIcon type={BsChevronDown} />}
             menuItems={menuItems}
           />
