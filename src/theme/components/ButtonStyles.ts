@@ -185,6 +185,7 @@ const Button = {
       w: 'button.max',
       fontFamily: 'secondary',
       fontSize: 'md',
+      fontWeight: 'regular',
       color: 'font.link',
       backgroundColor: 'transparent',
       border: 'none',
@@ -192,6 +193,7 @@ const Button = {
       _hover: {
         backgroundColor: 'transparent',
         textDecoration: 'underline',
+        textUnderlineOffset: '2px',
         color: 'font.linkHover',
       },
       _focus: {
