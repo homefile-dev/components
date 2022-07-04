@@ -6,6 +6,7 @@ export {
   EmailValidation,
   NewPassword,
   ResendResetPassword,
+  TwoFactor,
 } from './components/onboarding/pages'
 export { Header, Masthead, LeftPanel, Launchpad } from './components/launchpad'
 export { AddHomeContent, MyHomes, Address } from './components/myHomes'
