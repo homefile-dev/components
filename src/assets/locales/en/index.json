@@ -108,6 +108,7 @@
     "termsUrl": "https://homefile.cloud/terms"
   },
   "forms": {
+    "code": "Code",
     "email": "Email",
     "errorEmail": "Please enter a valid email",
     "errorEmailExists": "Email already exists",
@@ -212,6 +213,11 @@
     "notReply": "Please do not reply to this email as this is not an active email account."
   },
   "reset": {
+    "2FA": {
+      "placeholder": "Enter your code here",
+      "resend": "Resend new code",
+      "title": "Please enter the # Digit code."
+    },
     "email": "Enter your account email",
     "instruction": "We will send instructions to reset your password",
     "resetBt": "Reset Password",
