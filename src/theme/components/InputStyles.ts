@@ -51,6 +51,34 @@ const Input = {
         },
       },
     },
+    filled: {
+      field: {
+        bg: '#F2F2F2',
+        borderRadius: 'sm',
+        _placeholder: {
+          color: 'container.neutral',
+        },
+        _hover: {
+          borderColor: 'input.borderHover',
+        },
+        _focus: {
+          borderColor: 'input.borderFocus',
+        },
+        _autofill: {
+          boxShadow: '0 0 0px 1000px #F4F7F8 inset',
+          transition: 'background-color 5000s ease-in-out 0s',
+        },
+        _disabled: {
+          bg: 'container.tertiary',
+          _hover: {
+            borderColor: 'input.border',
+          },
+        },
+        _invalid: {
+          borderColor: 'pink.500',
+        },
+      },
+    },
     date: {
       field: {
         fontFamily: 'primary',
