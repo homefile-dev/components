@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { RoomItemI } from '../../interfaces/rooms/RoomsMenu.interface'
 
 export const useRoomList = () => {
@@ -7,8 +7,20 @@ export const useRoomList = () => {
   const [newRooms, setNewRooms] = useState<RoomItemI[]>([])
   const [dragStartIndex, setDragStartIndex] = useState<number | null>(null)
   const [counter, setCounter] = useState(0)
+  const [searchValue, setSearchValue] = useState('')
 
   const handleDragStart = (index: number) => setDragStartIndex(index)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value)
+  }
+
+  const handleFilter = (array: RoomItemI[]) => {
+    const filteredList = array.filter((item) =>
+      item.label.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    setNewRooms(filteredList)
+  }
 
   const handleDrop = (index: number) => {
     const dragItem = newRooms[dragStartIndex!]
@@ -34,7 +46,7 @@ export const useRoomList = () => {
     setCounter(counter + 1)
     counter === 0 && setIsOpen(true)
     counter === 1 && setAdding(true)
-    if (counter === 2 ) {
+    if (counter === 2) {
       setAdding(false)
       setIsOpen(false)
       setCounter(0)
@@ -43,11 +55,14 @@ export const useRoomList = () => {
 
   return {
     adding,
+    handleChange,
     handleDragStart,
     handleDrop,
+    handleFilter,
     handleOpen,
     newRooms,
     isOpen,
+    searchValue,
     setNewRooms,
   }
 }

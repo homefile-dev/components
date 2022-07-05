@@ -1,5 +1,14 @@
-import { Box, Text, Flex, Center } from '@chakra-ui/react'
-import { HiOutlinePlus } from 'react-icons/hi'
+import {
+  Box,
+  Text,
+  Flex,
+  Center,
+  InputGroup,
+  Input,
+  InputRightElement,
+  Button,
+} from '@chakra-ui/react'
+import { HiOutlinePlus, HiSearch } from 'react-icons/hi'
 import { VscClose } from 'react-icons/vsc'
 import { CustomIcon } from '../icons/CustomIcon'
 import { RoomCard } from './RoomCard'
@@ -11,17 +20,24 @@ import { t } from 'i18next'
 export const RoomsMenu = ({ rooms }: RoomsMenuI) => {
   const {
     adding,
+    handleChange,
     handleDragStart,
     handleDrop,
+    handleFilter,
     handleOpen,
     newRooms,
     isOpen,
+    searchValue,
     setNewRooms,
   } = useRoomList()
 
   useEffect(() => {
     ;(adding || rooms) && setNewRooms(rooms)
   }, [rooms, adding])
+
+  useEffect(() => {
+    handleFilter(rooms)
+  }, [searchValue])
 
   return (
     <Box
@@ -68,10 +84,35 @@ export const RoomsMenu = ({ rooms }: RoomsMenuI) => {
           </Flex>
         </Box>
       </Box>
+      {adding && (
+        <Box p="base" bg="white">
+          <InputGroup size="md">
+            <Input
+              variant="filled"
+              pr="4.5rem"
+              placeholder={t('addRoom.find')}
+              value={searchValue}
+              onChange={handleChange}
+            />
+            <InputRightElement>
+              <Button variant="icon" color="font.primary" onClick={() => {}}>
+                <CustomIcon type={HiSearch} size="6" />
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+        </Box>
+      )}
       <Box>
         {newRooms.map(({ icon, id, label }, i) => {
           return (
             <Box key={id}>
+              <Box bg="white">
+                <Box
+                  h="1px"
+                  bg="container.primary"
+                  marginX={isOpen ? 'base' : '0'}
+                />
+              </Box>
               <RoomCard
                 draggable={!adding}
                 handleDragStart={(index) => handleDragStart(index)}
@@ -80,15 +121,6 @@ export const RoomsMenu = ({ rooms }: RoomsMenuI) => {
                 index={i}
                 label={label}
               />
-              {i !== newRooms.length - 1 && (
-                <Box bg="white">
-                  <Box
-                    h="1px"
-                    bg="container.primary"
-                    marginX={isOpen ? 'base' : '0'}
-                  />
-                </Box>
-              )}
             </Box>
           )
         })}
