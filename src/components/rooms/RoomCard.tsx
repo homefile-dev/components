@@ -1,76 +1,44 @@
 import { Box, Flex, Image, Text, Center } from '@chakra-ui/react'
-import { useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
+import { useRoomCard } from '../../hooks/rooms/useRoomCard'
+import { RoomCardI } from '../../interfaces/rooms/RoomCard.interface'
+import { HiOutlinePlus } from 'react-icons/hi'
 
-interface RoomCardI {
-  icon: string
-  index: number
-  label: string
-}
-export const RoomCard = ({ icon, index, label }: RoomCardI) => {
-  const [styles, setStyles] = useState({
-    bg: 'white',
-    mTop: '0',
-    opacity: 1,
-  })
-
-  const onDragStart = (e: React.DragEvent) => {
-    e.dataTransfer.effectAllowed = 'move'
-    setStyles({
-      ...styles,
-      bg: 'container.tertiary',
-      opacity: 0.3,
-    })
-  }
-
-  const onDragEnd = () => {
-    setStyles({
-      ...styles,
-      bg: 'white',
-      mTop: '0',
-      opacity: 1,
-    })
-  }
-
-  const onDragLeave = () => {
-    setStyles({
-      ...styles,
-      mTop: '0',
-    })
-  }
-
-  const onDragOver = () => {
-    setStyles({
-      ...styles,
-      mTop: '4.5rem',
-    })
-  }
-
-  const onDragEnter = () => {
-    setStyles({
-      ...styles,
-      mTop: '4.5rem',
-    })
-  }
-
-  const onDrop = () => {
-    setStyles({
-      ...styles,
-      mTop: '0',
-    })
-  }
+export const RoomCard = ({
+  draggable = true,
+  handleDragStart,
+  handleDrop,
+  icon,
+  index,
+  label,
+}: RoomCardI) => {
+  const {
+    onDragEnd,
+    onDragEnter,
+    onDragLeave,
+    onDragOver,
+    onDragStart,
+    onDrop,
+    styles,
+  } = useRoomCard()
 
   return (
     <Box
-      draggable
+      draggable={draggable}
       overflow="hidden"
-      onDragStart={onDragStart}
+      onDragStart={(e) => {
+        onDragStart(e)
+        handleDragStart(index)
+      }}
       onDragEnd={onDragEnd}
       onDragEnter={onDragEnter}
       onDragLeave={onDragLeave}
       onDragOver={onDragOver}
-      onDrop={onDrop}
+      onDrop={() => {
+        onDrop()
+        handleDrop(index)
+      }}
     >
       <Box
         w="full"
@@ -90,12 +58,21 @@ export const RoomCard = ({ icon, index, label }: RoomCardI) => {
             {icon && <Image src={icon} alt={label} w="24px" h="auto" />}
           </Center>
           <Box flex="1">
-            <Text textAlign="left" variant="caption">
+            <Text
+              textAlign="left"
+              variant="caption"
+              noOfLines={1}
+              overflow="hidden"
+            >
               {label}
             </Text>
           </Box>
-          <Center w="container.roomIcon" as="button" cursor="move">
-            <CustomIcon type={FiMenu} color="button.icon" />
+          <Center w="container.roomIcon" cursor="move">
+            {draggable ? (
+              <CustomIcon type={FiMenu} color="button.icon" />
+            ) : (
+              <CustomIcon type={HiOutlinePlus} color="button.primary-300" />
+            )}
           </Center>
         </Flex>
       </Box>
