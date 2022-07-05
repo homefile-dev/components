@@ -67,7 +67,7 @@ export const RoomCard = ({
               {label}
             </Text>
           </Box>
-          <Center w="container.roomIcon" cursor="move">
+          <Center w="container.roomIcon" cursor={draggable ? 'move' : ''}>
             {draggable ? (
               <CustomIcon type={FiMenu} color="button.icon" />
             ) : (
