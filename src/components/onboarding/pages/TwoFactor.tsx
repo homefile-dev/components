@@ -63,7 +63,7 @@ export const TwoFactor = ({
               spinner={<ButtonLoader />}
               onClick={handleSubmit}
             >
-              {t('reset.resetBt')}
+              {t('forms.submit')}
             </Button>
             <Center>
               <Button onClick={handleResend} variant="text">
