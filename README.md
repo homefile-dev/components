@@ -2,7 +2,7 @@
  Components repository using Chakra UI, Storybook and React.
 
  ## Live project
- https://homefile-dev.github.io/storybook-chakra/
+ https://homefile-dev.github.io/components/
 
  ## Techs
  ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white "Typescript")
