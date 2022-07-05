@@ -7,6 +7,10 @@
     "errorSize": "Please select a file less than 5MB",
     "errorType": "File type must be .png, .jpeg or .jpg"
   },
+  "addRoom": {
+    "addBtn": "Add Room",
+    "find": "Find"
+  },
   "addRecipient": {
     "addBtn": "Add",
     "errorDuplicate": "This email address is already in the list",
