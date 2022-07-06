@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import HomeCard from '../../components/homeBoard/HomeCard'
 import { HomeCards } from '../../helpers/myHomes'
-import { recipientsDb } from '../../helpers/sendCommunication/AddRecipient.helper'
 
 export default {
   title: 'Components/HomeBoard',
