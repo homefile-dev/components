@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof AddFolder> = () => {
   }, [])
   return (
     <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="md">
-      <AddFolder handleClose={onClose} />
+      <AddFolder handleClose={onClose} handleSubmit={(value) => value} />
     </Drawer>
   )
 }

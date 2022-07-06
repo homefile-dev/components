@@ -44,7 +44,12 @@ export const HomeBoard = () => {
       <RightPanel
         children={
           isNewFolder ? (
-            <AddFolder handleClose={onRightClose} />
+            <AddFolder
+              handleClose={onRightClose}
+              handleSubmit={(value) => {
+                onRightClose()
+              }}
+            />
           ) : (
             <FolderDetail
               addedBy="First name and last name"

@@ -5,6 +5,7 @@ import { TextInput } from '../inputs'
 interface EditFolderNameI {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   handleEditFolderName: () => void
+  loading?: boolean
   isDisabled?: boolean
   value: string
 }
@@ -12,6 +13,7 @@ interface EditFolderNameI {
 export const EditFolderName = ({
   handleChange,
   handleEditFolderName,
+  loading,
   isDisabled = true,
   value,
 }: EditFolderNameI) => {
@@ -34,6 +36,7 @@ export const EditFolderName = ({
           maxH="input.md"
           disabled={!value || isDisabled}
           onClick={handleEditFolderName}
+          isLoading={loading}
         >
           {t('createDocument.buttons.save')}
         </Button>
