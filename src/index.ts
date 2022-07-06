@@ -34,4 +34,5 @@ export {
   HomeCardWithRecipent,
   FolderSharing,
   FolderDetail,
+  AddFolder,
 } from './components/homeBoard'
