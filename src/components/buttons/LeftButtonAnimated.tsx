@@ -12,15 +12,20 @@ export const LeftButtonAnimated = ({
   handleClick,
   label,
 }: LeftButtonAnimatedI) => {
+  let isMounted = true
   const labelWidth = label.length * 18 + 20
   const iconWidth = 64
   const [buttonWidth, setButtonWidth] = useState(labelWidth)
   const isCollapsed = buttonWidth === iconWidth
 
   useEffect(() => {
-    setTimeout(() => {
-      setButtonWidth(iconWidth)
+    const timeoutId = setTimeout(() => {
+      isMounted && setButtonWidth(iconWidth)
     }, 2000)
+    !isMounted && clearTimeout(timeoutId)
+    return () => {
+      isMounted = false
+    }
   }, [labelWidth])
 
   return (

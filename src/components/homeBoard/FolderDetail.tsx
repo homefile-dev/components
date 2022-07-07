@@ -69,6 +69,8 @@ export const FolderDetail = ({
     totalFiles,
   } = useFolderDetail()
 
+  let isMounted = true
+
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
   // const isNew = folder.status?.toLowerCase() === 'new'
   // const isShared = folder.needsReview || folder.reviewed
@@ -99,24 +101,39 @@ export const FolderDetail = ({
   ]
 
   useMemo(() => {
-    setDbFiles(handleMapFile({ files, isLocal: false }))
+    isMounted && setDbFiles(handleMapFile({ files, isLocal: false }))
+    return () => {
+      isMounted = false
+    }
   }, [files])
 
   useEffect(() => {
-    setTotalFiles([...dbFiles])
+    isMounted && setTotalFiles([...dbFiles])
+    return () => {
+      isMounted = false
+    }
   }, [acceptedFiles, dbFiles])
 
   useEffect(() => {
-    handleUpload(acceptedFiles)
+    isMounted && handleUpload(acceptedFiles)
+    return () => {
+      isMounted = false
+    }
   }, [acceptedFiles])
 
   useEffect(() => {
-    setFolderName(folder?.name)
+    isMounted && setFolderName(folder?.name)
+    return () => {
+      isMounted = false
+    }
   }, [folder.name])
 
   useEffect(() => {
-    setIsUploading(uploading)
+    isMounted && setIsUploading(uploading)
     !uploading && setAcceptedFiles([])
+    return () => {
+      isMounted = false
+    }
   }, [uploading])
 
   return (
