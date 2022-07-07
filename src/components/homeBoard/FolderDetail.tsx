@@ -78,7 +78,7 @@ export const FolderDetail = ({
   //   ? BlueFolder
   //   : YellowFolderUnshared
   const icon = YellowFolder
-  const typesOptions = ['All', ...folder.subTypes]
+  const typesOptions = ['All']
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
   fileDetailProxy.editing = editing
@@ -111,8 +111,8 @@ export const FolderDetail = ({
   }, [acceptedFiles])
 
   useEffect(() => {
-    setFolderName(folder?.type)
-  }, [folder.type])
+    setFolderName(folder?.name)
+  }, [folder.name])
 
   useEffect(() => {
     setIsUploading(uploading)
@@ -193,7 +193,7 @@ export const FolderDetail = ({
                 isDisabled: true,
                 label: t('folderSharing.details.delete'),
                 onClick: () => {
-                  handleDeleteFolder(folder.type)
+                  handleDeleteFolder(folder.name)
                   handleClose()
                 },
               }}

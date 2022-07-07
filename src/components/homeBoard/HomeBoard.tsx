@@ -31,12 +31,10 @@ export const HomeBoard = () => {
 
   const [isNewFolder, setIsNewFolder] = useState(false)
   const [selectedFolder, setSelectedFolder] = useState<FolderI>({
-    deleted: false,
-    needsReview: false,
-    reviewed: false,
-    status: '',
-    subTypes: [],
-    type: '',
+    _id: '',
+    name: '',
+    public: false,
+    home: '',
   })
 
   return (
