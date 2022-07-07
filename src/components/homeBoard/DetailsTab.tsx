@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { Stack, Flex, Text, Button, Image, Box, Center } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { useState } from 'react'
 import { BeatLoader } from 'react-spinners'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { TextInput } from '../inputs'
@@ -26,6 +26,18 @@ export const DetailsTab = ({
   const [fileName, setFileName] = useState(name)
   const [description, setDescription] = useState(descriptionProxy)
 
+  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target
+    setFileName(value)
+    fileDetailProxy.name = value
+  }
+
+  const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target
+    setDescription(value)
+    fileDetailProxy.description = value
+  }
+
   return editing ? (
     <Center h="6rem">
       <BeatLoader color="gray" size={6} />
@@ -35,10 +47,7 @@ export const DetailsTab = ({
       <Flex gap="base" align="center">
         <Image src={icon} w="auto" h="3rem" alt={t('folderSharing.altIcon')} />
         <TextInput
-          handleChange={(event) => {
-            setFileName(event.target.value)
-            fileDetailProxy.name = event.target.value
-          }}
+          handleChange={handleChangeName}
           id={_id}
           placeholder=""
           value={fileName}
@@ -89,10 +98,7 @@ export const DetailsTab = ({
           </Text>
           <Flex gap="base" flex="0.8">
             <TextInput
-              handleChange={(event) => {
-                setDescription(event.target.value)
-                fileDetailProxy.description = event.target.value
-              }}
+              handleChange={handleChangeDescription}
               id={name || _id}
               placeholder={t('addMedia.description')}
               value={description || ''}

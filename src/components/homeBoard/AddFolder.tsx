@@ -5,9 +5,13 @@ import { YellowFolder } from '../../assets/images'
 import { AddFolderI } from '../../interfaces/homeBoard/AddFolder.interface'
 import { FooterDrawer, FooterButtons } from '../footers'
 import { PanelHeader } from '../headers'
-import EditFolderName from './EditFolderName'
+import { EditFolderName } from './EditFolderName'
 
-export const AddFolder = ({ handleClose, handleSubmit, loading }: AddFolderI) => {
+export const AddFolder = ({
+  handleClose,
+  handleSubmit,
+  loading,
+}: AddFolderI) => {
   const [folderName, setFolderName] = useState('')
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFolderName(e.target.value)

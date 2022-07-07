@@ -1,9 +1,9 @@
 import { Wrap, Box, useDisclosure } from '@chakra-ui/react'
+import { t } from 'i18next'
 import { RightPanel } from '../launchpad/RightPanel'
 import { FileDetail } from './FileDetail'
 import { File } from './File'
 import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
-import { t } from 'i18next'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
 
