@@ -38,6 +38,7 @@ export const FolderDetail = ({
   handleClose,
   handleEditDescription,
   handleEditFileName,
+  handleEditFolderName,
   handleAddRecipient,
   handleDeleteFile,
   handleDeleteFolder,
@@ -146,11 +147,13 @@ export const FolderDetail = ({
         />
       </DrawerHeader>
       <EditFolderName
-        handleChange={() => {
-          // ADD handleChange function
-        }}
+        isDisabled={!folder.public}
+        handleChange={handleChange}
         handleEditFolderName={() => {
-          // ADD handleEditFolderName function
+          handleEditFolderName({
+            ...folder,
+            name: folderName,
+          })
         }}
         value={folderName}
       />

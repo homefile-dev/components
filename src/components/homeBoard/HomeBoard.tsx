@@ -61,6 +61,7 @@ export const HomeBoard = () => {
               handleDeleteRecipient={(email) => email}
               handleEditDescription={(file) => file}
               handleEditFileName={(file) => file}
+              handleEditFolderName={(folder) => folder}
               handleFileClick={(file) => file}
               handleFilter={(filter) => filter}
               handleOpenFile={(file) => file}

@@ -17,6 +17,7 @@ export interface FolderDetailI {
   handleDeleteRecipient: (email: string) => void
   handleEditDescription: (file: FolderFileI) => void
   handleEditFileName: (file: FolderFileI) => void
+  handleEditFolderName: (folder: FolderI) => void
   handleFileClick: (file: FolderFileI) => void
   handleFilter: (filter: SelectItemI | string) => void
   handleOpenFile: (file: FolderFileI) => void
