@@ -147,7 +147,7 @@ export const FolderDetail = ({
         />
       </DrawerHeader>
       <EditFolderName
-        isDisabled={!folder.public}
+        isDisabled={folder.public}
         handleChange={handleChange}
         handleEditFolderName={() => {
           handleEditFolderName({
