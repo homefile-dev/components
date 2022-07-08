@@ -28,7 +28,6 @@ export const AddFolder = ({
           handleChange={handleChange}
           handleEditFolderName={() => handleSubmit(folderName)}
           loading={loading}
-          isDisabled={false}
           value={folderName}
         />
       </DrawerHeader>

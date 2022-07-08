@@ -14,7 +14,7 @@ export const EditFolderName = ({
   handleChange,
   handleEditFolderName,
   loading,
-  isDisabled = true,
+  isDisabled = false,
   value,
 }: EditFolderNameI) => {
   return (
