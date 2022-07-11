@@ -220,7 +220,7 @@
     "2FA": {
       "placeholder": "Enter your code here",
       "resend": "Resend new code",
-      "title": "Please enter the # Digit code."
+      "title": "Please enter the 6 Digit code."
     },
     "email": "Enter your account email",
     "instruction": "We will send instructions to reset your password",
