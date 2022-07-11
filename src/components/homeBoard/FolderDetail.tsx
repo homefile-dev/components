@@ -210,7 +210,7 @@ export const FolderDetail = ({
             <FooterButtons
               button3={{
                 buttonStyle: 'secondaryFooter',
-                isDisabled: folder.public,
+                isDisabled: false,
                 label: t('folderSharing.details.delete'),
                 onClick: () => handleDeleteFolder(folder._id),
               }}
