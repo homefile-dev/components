@@ -1,7 +1,7 @@
 import { Container, Flex, Stack, Image, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { Recipient } from '../../assets/images'
-import { RecipientI } from '../../interfaces/sendCommunication/AddRecipient.interface'
+import { RecipientI } from '../../interfaces/sendDocument/AddRecipient.interface'
 import { RecipientContent } from './RecipientContent'
 
 interface RecipientCardI {

@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { ProgressReport } from '../../assets/images'
-import { DocumentPreviewI } from '../../interfaces/sendCommunication/DocumentPreview.interface'
+import { DocumentPreviewI } from '../../interfaces/sendDocument/DocumentPreview.interface'
 import { FooterButtons, FooterDrawer } from '../footers'
 import { PanelHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'

@@ -1,4 +1,4 @@
-import { SelectItemI } from '../../interfaces/inputs/Select.interface'
+import { SelectItemI } from '../inputs/Select.interface'
 
 export interface CreateDocumentContentI {
   handleDateRange?: (date: string) => void

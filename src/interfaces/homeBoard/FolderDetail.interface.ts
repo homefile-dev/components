@@ -1,7 +1,7 @@
 import { FileI } from './File.interface'
 import { FolderI } from './FolderSharing.interface'
-import { RecipientI } from '../sendCommunication/AddRecipient.interface'
-import { ImageDBI } from '../sendCommunication/AddMedia.interface'
+import { RecipientI } from '../sendDocument/AddRecipient.interface'
+import { ImageDBI } from '../sendDocument/AddMedia.interface'
 import { SelectItemI } from '../inputs/Select.interface'
 
 export interface FolderDetailI {

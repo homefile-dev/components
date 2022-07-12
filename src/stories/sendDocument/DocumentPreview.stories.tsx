@@ -1,8 +1,8 @@
 import { Drawer, useDisclosure } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useEffect } from 'react'
-import DocumentPreview from '../../components/sendCommunication/DocumentPreview'
-import { documentDB } from '../../helpers/sendCommunication/DocumentPreview.helper'
+import DocumentPreview from '../../components/sendDocument/DocumentPreview'
+import { documentDB } from '../../helpers/sendDocument/DocumentPreview.helper'
 
 export default {
   title: 'Components/SendCommunication',

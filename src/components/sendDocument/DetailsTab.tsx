@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {
   templateForm,
   TemplateFields,
-} from '../../helpers/sendCommunication/PublicTemplate.helper'
+} from '../../helpers/sendDocument/PublicTemplate.helper'
 import { TextInput } from '../inputs'
 
 export const DetailTab = () => {

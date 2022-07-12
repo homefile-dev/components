@@ -17,13 +17,13 @@ import {
 } from '@chakra-ui/react'
 import { SectionHeader } from '../headers'
 import { HomeAddress } from '../../assets/images'
-import { useAddMedia } from '../../hooks/sendCommunication/useAddMedia'
+import { useAddMedia } from '../../hooks/sendDocument/useAddMedia'
 import { t } from 'i18next'
 import { TextInput } from '../inputs'
 import {
   AddMediaI,
   ImagesI,
-} from '../../interfaces/sendCommunication/AddMedia.interface'
+} from '../../interfaces/sendDocument/AddMedia.interface'
 import { useEffect, useMemo, useState } from 'react'
 import { DragDropArea } from '../dragDrop/DragDropArea'
 import { DragDropLoading } from '../dragDrop/DragDropLoading'

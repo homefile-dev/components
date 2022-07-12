@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import HomeCardWithRecipent from '../../components/homeBoard/HomeCardWithRecipent'
 import { HomeCards } from '../../helpers/myHomes'
-import { recipientsDb } from '../../helpers/sendCommunication/AddRecipient.helper'
+import { recipientsDb } from '../../helpers/sendDocument/AddRecipient.helper'
 
 export default {
   title: 'Components/HomeBoard',

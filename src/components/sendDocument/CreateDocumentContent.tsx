@@ -10,7 +10,7 @@ import { ProgressReport } from '../../assets/images'
 import { t } from 'i18next'
 import CreateDocumentHeader from './CreateDocumentHeader'
 import { createDocList } from '../../helpers/headers/TabHeader.helper'
-import { CreateDocumentContentI } from '../../interfaces/sendCommunication/CreateDocumentContent.interface'
+import { CreateDocumentContentI } from '../../interfaces/sendDocument/CreateDocumentContent.interface'
 import DocumentNameHeader from './DocumentNameHeader'
 import { useState } from 'react'
 import { FooterDrawer } from '../footers/FooterDrawer'
@@ -18,7 +18,7 @@ import FooterButtons from '../footers/FooterButtons'
 import { ButtonsFooter } from '../../helpers/footers/FooterButtons.helper'
 import RightPanel from '../launchpad/RightPanel'
 import { DocumentPreview } from './DocumentPreview'
-import { documentDB } from '../../helpers/sendCommunication/DocumentPreview.helper'
+import { documentDB } from '../../helpers/sendDocument/DocumentPreview.helper'
 
 export const CreateDocumentContent = ({
   handleDateRange,

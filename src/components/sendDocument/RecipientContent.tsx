@@ -1,5 +1,5 @@
 import { Flex, Avatar, Stack, Box, Text } from '@chakra-ui/react'
-import { RecipientI } from "../../interfaces/sendCommunication/AddRecipient.interface"
+import { RecipientI } from "../../interfaces/sendDocument/AddRecipient.interface"
 
 export const RecipientContent = (recipient: RecipientI) => {
   const { email, firstName, lastName, phone } = recipient

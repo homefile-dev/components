@@ -9,12 +9,12 @@ import {
 import { HomeCards, MyHomeFilters } from '../../helpers/myHomes'
 import { MenuItems } from '../../helpers/myHomes/HomeCard.helper'
 import RightPanel from './RightPanel'
-import SendCommunication from '../sendCommunication/SendCommunication'
-import CreateDocumentContent from '../sendCommunication/CreateDocumentContent'
+import SendCommunication from '../sendDocument/SendCommunication'
+import CreateDocumentContent from '../sendDocument/CreateDocumentContent'
 import { t } from 'i18next'
 import { Document, Proposal, ProgressReport } from '../../assets/images'
 import { CreateDocument } from '../../helpers/launchpad/Documents.helper'
-import { CreateDocumentHeaderI } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
+import { CreateDocumentHeaderI } from '../../interfaces/sendDocument/CreateDocumentHeader.interface'
 import { SelectHomes } from '../../helpers/inputs/SelectInput.helper'
 
 export const Launchpad = () => {

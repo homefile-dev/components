@@ -1,6 +1,6 @@
 import { t } from 'i18next'
 import { ChangeEvent, useState } from 'react'
-import { RecipientI } from '../../interfaces/sendCommunication/AddRecipient.interface'
+import { RecipientI } from '../../interfaces/sendDocument/AddRecipient.interface'
 
 export const useAddRecipient = () => {
   const [email, setEmail] = useState('')

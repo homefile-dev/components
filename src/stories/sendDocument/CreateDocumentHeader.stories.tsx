@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import CreateDocumentHeader from '../../components/sendCommunication/CreateDocumentHeader'
+import CreateDocumentHeader from '../../components/sendDocument/CreateDocumentHeader'
 import { SelectHomes } from '../../helpers/inputs/SelectInput.helper'
 
 export default {

@@ -1,12 +1,12 @@
 import { Box, Flex, Stack, useDisclosure } from '@chakra-ui/react'
 import { UserMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 import { HomeCards } from '../../helpers/myHomes'
-import { SendCommunication } from '../sendCommunication/SendCommunication'
+import { SendCommunication } from '../sendDocument/SendCommunication'
 import { RightPanel } from '../launchpad/RightPanel'
 import { Masthead } from '../launchpad'
 import { HomeHeader } from './HomeHeader'
 import { HomeCardWithRecipent } from './HomeCardWithRecipent'
-import { recipientsDb } from '../../helpers/sendCommunication/AddRecipient.helper'
+import { recipientsDb } from '../../helpers/sendDocument/AddRecipient.helper'
 import {
   fileDB,
   FoldersDB,

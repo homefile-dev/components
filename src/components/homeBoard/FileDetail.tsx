@@ -14,7 +14,7 @@ import { t } from 'i18next'
 import { DetailsTab } from './DetailsTab'
 import { useSnapshot } from 'valtio'
 import { FileDetailI } from '../../interfaces/homeBoard/File.interface'
-import { RecipientTab } from '../sendCommunication'
+import { RecipientTab } from '../sendDocument'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 
 export const FileDetail = ({

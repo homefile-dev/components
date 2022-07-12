@@ -4,7 +4,7 @@ import { useDropzone } from 'react-dropzone'
 import {
   ImagesI,
   MapImagesI,
-} from '../../interfaces/sendCommunication/AddMedia.interface'
+} from '../../interfaces/sendDocument/AddMedia.interface'
 
 export const useAddMedia = () => {
   const [acceptedFiles, setAcceptedFiles] = useState<ImagesI[]>([])

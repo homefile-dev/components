@@ -4,7 +4,7 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 import { CustomIcon } from '../icons/CustomIcon'
 import ContainerHeader from '../headers/ContainerHeader'
 import SendDoc from '../../assets/images/send.svg'
-import { SendCommunicationI } from '../../interfaces/sendCommunication/SendCommunication.interface'
+import { SendCommunicationI } from '../../interfaces/sendDocument/SendCommunication.interface'
 import { DocumentMenu } from '../homeSummary'
 
 export const SendCommunication = ({

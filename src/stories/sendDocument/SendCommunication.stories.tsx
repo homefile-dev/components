@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import SendCommunication from '../../components/sendCommunication/SendCommunication'
+import SendCommunication from '../../components/sendDocument/SendCommunication'
 import { documents } from '../../helpers/homeSummary/DocumentList.helper'
 import { MyHomeMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 

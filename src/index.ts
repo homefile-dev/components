@@ -26,7 +26,7 @@ export {
   AddMedia,
   RecipientTab,
   DocumentPreview,
-} from './components/sendCommunication'
+} from './components/sendDocument'
 export { FooterButtons, FooterDrawer } from './components/footers'
 export {
   HomeHeader,

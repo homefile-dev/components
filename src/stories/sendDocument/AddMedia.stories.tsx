@@ -3,8 +3,8 @@ import {
 } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useEffect, useState } from 'react'
-import { AddMedia } from '../../components/sendCommunication'
-import { imagesDb } from '../../helpers/sendCommunication/AddMedia.helper'
+import { AddMedia } from '../../components/sendDocument'
+import { imagesDb } from '../../helpers/sendDocument/AddMedia.helper'
 
 export default {
   title: 'Components/SendCommunication',

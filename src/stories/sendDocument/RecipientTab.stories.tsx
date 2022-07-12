@@ -3,8 +3,8 @@ import {
 } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import { RecipientTab } from '../../components/sendCommunication'
-import { recipientsDb } from '../../helpers/sendCommunication/AddRecipient.helper'
+import { RecipientTab } from '../../components/sendDocument'
+import { recipientsDb } from '../../helpers/sendDocument/AddRecipient.helper'
 
 export default {
   title: 'Components/SendCommunication',

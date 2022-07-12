@@ -3,7 +3,7 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 import { HomeCardWithRecipentI } from '../../interfaces/homeBoard/HomeCardWithRecipent.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 import { IconMenu } from '../launchpad'
-import RecipientContent from '../sendCommunication/RecipientContent'
+import RecipientContent from '../sendDocument/RecipientContent'
 import HomeCard from './HomeCard'
 
 export const HomeCardWithRecipent = ({

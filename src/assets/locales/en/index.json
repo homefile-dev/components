@@ -247,7 +247,7 @@
     "structure": "Structure",
     "theatre": "Theatre"
   },
-  "sendCommunication": {
+  "sendDocument": {
     "btLabel": "Document",
     "title": "Send Communication",
     "headers": {
@@ -256,10 +256,6 @@
       "documentName": "Document Name"
     },
     "placeholder": "Insert document name"
-  },
-  "sendDocument": {
-    "setupBt": "Set Up Document",
-    "title": "Send Document"
   },
   "signin": {
     "forgotBt": "Forgot Password?",

@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
-import { CreateDocumentHeaderI } from '../../interfaces/sendCommunication/CreateDocumentHeader.interface'
+import { CreateDocumentHeaderI } from '../../interfaces/sendDocument/CreateDocumentHeader.interface'
 import DateRangePicker from '../inputs/DateRangePicker'
 import SelectInput from '../inputs/SelectInput'
 

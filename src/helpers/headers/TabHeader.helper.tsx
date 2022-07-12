@@ -1,10 +1,10 @@
 import { t } from 'i18next'
-import DetailsTab from '../../components/sendCommunication/DetailsTab'
-import AddMedia from '../../components/sendCommunication/AddMedia'
-import { imagesDb } from '../sendCommunication/AddMedia.helper'
+import DetailsTab from '../../components/sendDocument/DetailsTab'
+import AddMedia from '../../components/sendDocument/AddMedia'
+import { imagesDb } from '../sendDocument/AddMedia.helper'
 import { useEffect, useState } from 'react'
-import RecipientTab from '../../components/sendCommunication/RecipientTab'
-import { recipientsDb } from '../sendCommunication/AddRecipient.helper'
+import RecipientTab from '../../components/sendDocument/RecipientTab'
+import { recipientsDb } from '../sendDocument/AddRecipient.helper'
 
 const AddMediaContent = () => {
   const [isUploading, setIsUploading] = useState(false)

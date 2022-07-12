@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { useState } from 'react'
-import DocumentNameHeader from '../../components/sendCommunication/DocumentNameHeader'
+import DocumentNameHeader from '../../components/sendDocument/DocumentNameHeader'
 
 export default {
   title: 'Components/SendCommunication',
