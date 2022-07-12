@@ -7,7 +7,7 @@ import { AddMedia } from '../../components/sendDocument'
 import { imagesDb } from '../../helpers/sendDocument/AddMedia.helper'
 
 export default {
-  title: 'Components/SendCommunication',
+  title: 'Components/SendDocument',
   component: AddMedia,
 } as ComponentMeta<typeof AddMedia>
 

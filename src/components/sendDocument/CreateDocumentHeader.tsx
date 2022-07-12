@@ -20,7 +20,7 @@ export const CreateDocumentHeader = ({
           <Flex gap="2" align="center">
             {!isSmallMobile && (
               <Text variant="info">
-                {t('sendCommunication.headers.selectHome')}
+                {t('sendDocument.headers.selectHome')}
               </Text>
             )}
 
@@ -36,7 +36,7 @@ export const CreateDocumentHeader = ({
         <Flex gap="2" align="center">
           {!isSmallMobile && (
             <Text variant="info">
-              {t('sendCommunication.headers.dateRange')}
+              {t('sendDocument.headers.dateRange')}
             </Text>
           )}
           <DateRangePicker

@@ -5,7 +5,7 @@ import { documents } from '../../helpers/homeSummary/DocumentList.helper'
 import { MyHomeMenuItems } from '../../helpers/launchpad/MenuItems.helper'
 
 export default {
-  title: 'Components/SendCommunication',
+  title: 'Components/SendDocument',
   component: SendCommunication,
 } as ComponentMeta<typeof SendCommunication>
 

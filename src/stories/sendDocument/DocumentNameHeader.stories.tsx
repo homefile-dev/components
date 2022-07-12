@@ -4,7 +4,7 @@ import { useState } from 'react'
 import DocumentNameHeader from '../../components/sendDocument/DocumentNameHeader'
 
 export default {
-  title: 'Components/SendCommunication',
+  title: 'Components/SendDocument',
   component: DocumentNameHeader,
 } as ComponentMeta<typeof DocumentNameHeader>
 

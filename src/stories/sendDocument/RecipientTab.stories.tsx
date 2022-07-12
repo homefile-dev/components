@@ -7,7 +7,7 @@ import { RecipientTab } from '../../components/sendDocument'
 import { recipientsDb } from '../../helpers/sendDocument/AddRecipient.helper'
 
 export default {
-  title: 'Components/SendCommunication',
+  title: 'Components/SendDocument',
   component: RecipientTab,
 } as ComponentMeta<typeof RecipientTab>
 

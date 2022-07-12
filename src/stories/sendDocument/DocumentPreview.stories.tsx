@@ -5,7 +5,7 @@ import DocumentPreview from '../../components/sendDocument/DocumentPreview'
 import { documentDB } from '../../helpers/sendDocument/DocumentPreview.helper'
 
 export default {
-  title: 'Components/SendCommunication',
+  title: 'Components/SendDocument',
   component: DocumentPreview,
 } as ComponentMeta<typeof DocumentPreview>
 

@@ -13,16 +13,16 @@ export const DocumentNameHeader = ({
     <Box bg="container.neutralBlue" py="2" px="base" w="100%">
       <Flex gap="2" align="center">
         <Text variant="info" minW="fit-content">
-          {t('sendCommunication.headers.documentName')}
+          {t('sendDocument.headers.documentName')}
         </Text>
         <TextInput
-          errorMessage={`${t('sendCommunication.headers.documentName')} ${t(
+          errorMessage={`${t('sendDocument.headers.documentName')} ${t(
             'forms.required'
           )}`}
           hasError={isEmptyField(value)}
           id={id}
           handleChange={handleChange}
-          placeholder={t('sendCommunication.placeholder')}
+          placeholder={t('sendDocument.placeholder')}
           value={value}
         />
       </Flex>

@@ -15,7 +15,7 @@ export const SendCommunication = ({
   return (
     <Container variant="launchpad" h="fit-content" minW="20rem">
       <ContainerHeader
-        title={t('sendCommunication.title')}
+        title={t('sendDocument.title')}
         titleIcon={SendDoc}
         menuItems={headerList}
         icon={<CustomIcon type={FiMoreHorizontal} size="8" />}
@@ -24,7 +24,7 @@ export const SendCommunication = ({
         <DocumentMenu
           documents={documentList}
           isDisabled={isDisabled}
-          title={t('sendCommunication.btLabel')}
+          title={t('sendDocument.btLabel')}
         />
       </Box>
     </Container>
