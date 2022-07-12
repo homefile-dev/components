@@ -93,7 +93,8 @@
     "build-storybook": "build-storybook",
     "clean": "rimraf dist/",
     "copy": "copyfiles -u 1 src/assets/**/* src/styles/* dist/",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "artifactregistry-login": "npx google-artifactregistry-auth"
   },
   "resolutions": {
     "trim-newlines": "^3.0.1",
