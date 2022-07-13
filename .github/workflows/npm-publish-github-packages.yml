@@ -7,23 +7,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
-    permissions: 
+    runs-on: ubuntu-latest
+    permissions:
       contents: read
-      packages: write 
+      packages: write
     steps:
       - uses: actions/checkout@v3
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_ARTIFACTORY_SERVICE_ACCOUNT}}
-          export_default_credentials: true
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@homefile-dev'
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
       - run: yarn install
       - run: yarn build
       - run: yarn publish
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
