@@ -93,8 +93,7 @@
     "build-storybook": "build-storybook",
     "clean": "rimraf dist/",
     "copy": "copyfiles -u 1 src/assets/**/* src/styles/* dist/",
-    "prepare": "husky install",
-    "artifactregistry-login": "./node_modules/.bin/artifactregistry-auth --repo-config=[./.npmrc] --credential-config=[~/.npmrc]"
+    "prepare": "husky install"
   },
   "resolutions": {
     "trim-newlines": "^3.0.1",

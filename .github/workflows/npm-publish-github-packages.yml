@@ -12,11 +12,23 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Configure Workload Identity Federation and generate an access token.
       - id: 'auth'
+        name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0'
+        with:
+          workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          # my-service-account@my-project.iam.gserviceaccount.com
+          service_account: '${{ secrets.GCP_ARTIFACTORY_SERVICE_ACCOUNT}}' 
+      
+      # Setup gcloud CLI
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
+      
+      # Setup GitHub Packages
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
