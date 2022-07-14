@@ -249,7 +249,7 @@
   },
   "sendDocument": {
     "btLabel": "Document",
-    "title": "Send Communication",
+    "title": "Send Document",
     "headers": {
       "selectHome": "Select Home",
       "dateRange": "Date Range",
