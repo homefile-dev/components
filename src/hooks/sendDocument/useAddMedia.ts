@@ -13,7 +13,7 @@ export const useAddMedia = () => {
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [index, setIndex] = useState(0)
-  const acceptVideo = false
+  const acceptVideo = true
   const { REACT_APP_STORAGE_URL: storageUrl } = process.env
   const urlModal = `${storageUrl}/${totalFiles[index]?.bucketName}/${totalFiles[index]?.fileName}.${totalFiles[index]?.extension}`
 
