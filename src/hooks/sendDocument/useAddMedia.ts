@@ -40,7 +40,7 @@ export const useAddMedia = () => {
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
       'image/png': acceptVideo
-        ? ['.jpeg', '.jpg', '.mp4', '.webm']
+        ? ['.jpeg', '.jpg', '.mp4', '.webm', '.mov']
         : ['.jpeg', '.jpg'],
     },
     maxSize: 25000000,

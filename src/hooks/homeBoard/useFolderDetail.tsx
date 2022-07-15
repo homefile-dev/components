@@ -46,7 +46,7 @@ export const useFolderDetail = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
-      'image/png': ['.jpeg', '.jpg', '.pdf', '.txt', '.doc', '.docx'],
+      'image/png': ['.jpeg', '.jpg', '.pdf', '.txt', '.doc', '.docx', ".mov"],
     },
     disabled: isUploading,
     maxSize: 25000000,
