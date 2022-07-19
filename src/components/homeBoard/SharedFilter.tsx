@@ -19,7 +19,11 @@ export const SharedFilter = ({
   )}`
   const one = `${t('folderSharing.showing.part1')} ${showingFiles} ${t(
     'folderSharing.showing.part2'
-  )} ${totalFiles} ${t('folderSharing.showing.part4')}`
+  )} ${totalFiles} ${
+    totalFiles === 0
+      ? t('folderSharing.showing.part3')
+      : t('folderSharing.showing.part4')
+  }`
   return (
     <Box bg="container.tertiary" w="100%" px="4" py="base">
       <Flex justify="space-between" align="center">
