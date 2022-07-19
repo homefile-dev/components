@@ -53,7 +53,7 @@
     "title": "Create Document"
   },
   "dragDrop": {
-    "message": "Drop files to attach or ",
+    "message": "Drop files to add or ",
     "message2": "browse"
   },
   "folderSharing": {
@@ -248,8 +248,8 @@
     "theatre": "Theatre"
   },
   "sendDocument": {
-    "btLabel": "Document",
-    "title": "Send Document",
+    "btLabel": "Create",
+    "title": "Document",
     "headers": {
       "selectHome": "Select Home",
       "dateRange": "Date Range",
