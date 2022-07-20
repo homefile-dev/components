@@ -36,3 +36,4 @@ export {
   FolderDetail,
   AddFolder,
 } from './components/homeBoard'
+export { ShareHome } from './components/shareHome/ShareHome'
