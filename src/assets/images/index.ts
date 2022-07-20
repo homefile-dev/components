@@ -12,6 +12,8 @@ import Proposal from './proposal.svg'
 import RelationshipHome from './relationship-home.svg'
 import ResendPassword from './resend-password.svg'
 import Send from './send.svg'
+import ShareHome from './share-home.svg'
+import ShareWith from './share-with.svg'
 import YellowFolder from './yellow-folder.svg'
 import Recipient from './recipient.svg'
 import LogoCompany from './logo-company.svg'
@@ -38,6 +40,8 @@ export {
   RelationshipHome,
   ResendPassword,
   Send,
+  ShareHome,
+  ShareWith,
   YellowFolder,
   Recipient,
   LogoCompany,
