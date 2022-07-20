@@ -1,7 +1,6 @@
-
 export interface ShareFormI {
- email: string
- accountType: 'Manager' | 'Member' | 'Contributor'
+  accountType: string
+  email: string
 }
 
 export interface AssociatedAccountI {
@@ -12,7 +11,7 @@ export interface AssociatedAccountI {
 }
 
 export interface ShareHomeI {
+  associatedAccounts: AssociatedAccountI[]
   handleAdd: (form: ShareFormI) => void
   handleShowAccounts: () => void
-  associatedAccounts: AssociatedAccountI[]
 }
