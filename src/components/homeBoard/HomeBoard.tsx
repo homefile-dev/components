@@ -19,6 +19,7 @@ import { useState } from 'react'
 import { RoomsMenu } from '../rooms/RoomsMenu'
 import { RoomsList } from '../../helpers/rooms/RoomsList'
 import { AddFolder } from './AddFolder'
+import ShareHome from '../shareHome/ShareHome'
 
 export const HomeBoard = () => {
   const homeName = 'The Edmunds'
@@ -138,7 +139,14 @@ export const HomeBoard = () => {
                   ]}
                   selectItems={selectOptions}
                 />
-                <SendCommunication documentList={[]} />
+                <Stack spacing="base">
+                  <ShareHome
+                    handleShowAccounts={() => {}}
+                    handleAdd={(form) => form}
+                    associatedAccounts={[]}
+                  />
+                  <SendCommunication documentList={[]} />
+                </Stack>
               </Flex>
             </Flex>
           </Stack>
