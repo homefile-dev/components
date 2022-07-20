@@ -160,7 +160,7 @@
       "tabs": {
         "tab1": "Details",
         "tab2": "Projects",
-        "tab3": "Clients"
+        "tab3": "Share"
       }
     },
     "firstHome": {
@@ -256,6 +256,15 @@
       "documentName": "Document Name"
     },
     "placeholder": "Insert document name"
+  },
+  "shareHome": {
+    "accountTypes": "Manager,Member,Contributor",
+    "btInvite": "Invite",
+    "connected": "Connected",
+    "pending": "Invites Pending",
+    "placeholder": "Enter email address",
+    "title": "Share Home",
+    "subtitle": "Share with"
   },
   "signin": {
     "forgotBt": "Forgot Password?",
