@@ -15,8 +15,9 @@ import {
   VioletFolder,
   YellowFolder,
   YellowFolderUnshared,
+  GreenFolder
 } from '../../assets/images'
-import { FolderSharingI } from '../../interfaces/homeBoard/FolderSharing.interface'
+import { FolderSharingI, IconI } from '../../interfaces/homeBoard/FolderSharing.interface'
 import { TextBagde } from '../badge/TextBadge'
 import { ContainerHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
@@ -36,6 +37,19 @@ export const FolderSharing = ({
 }: FolderSharingI) => {
   const { width } = useWindowDimensions()
   const isDesktop = width > 800
+
+  const getIcon = (icon: string) => {
+
+    const iconTypes: IconI = {
+      folder: YellowFolder,
+      documents: BlueFolder,
+      project: GreenFolder,
+      default: YellowFolder
+    }
+
+    return iconTypes[icon as keyof IconI] ? iconTypes[icon as keyof IconI] : iconTypes['default']
+  }
+
   return (
     <Container variant="launchpad" minW={isDesktop ? '62%' : 'full'}>
       <ContainerHeader
@@ -58,7 +72,7 @@ export const FolderSharing = ({
       </Box>
       <Wrap py="8" px="base" spacing="2">
         {folders &&
-          folders.map(({ _id, name, public: isPublic, home }, index) => {
+          folders.map(({ _id, name, public: isPublic, home, icon }, index) => {
             // const isNew = status?.toLowerCase() === 'new'
             // const isShared = needsReview || reviewed
             // const icon = isNew
@@ -69,7 +83,8 @@ export const FolderSharing = ({
 
             const isNew = false
             const isShared = false
-            const icon = YellowFolder
+            const folderIcon = icon ? getIcon(icon) : getIcon('default')
+            
             return (
               <WrapItem w="6rem" key={_id}>
                 <Button
@@ -86,7 +101,7 @@ export const FolderSharing = ({
                       home,
 
                     })
-                    folderHeaderProxy.icon = icon
+                    folderHeaderProxy.icon = folderIcon
                     folderHeaderProxy.title = name
                   }}
                 >
@@ -110,7 +125,7 @@ export const FolderSharing = ({
                   </Flex>
                   <Flex direction="column" gap="base" align="center">
                     <Image
-                      src={icon}
+                      src={folderIcon}
                       w="3.7rem"
                       h="auto"
                       alt={t('folderSharing.altIcon')}

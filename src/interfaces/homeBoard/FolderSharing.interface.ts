@@ -1,11 +1,20 @@
 import { SelectItemI } from "../inputs/Select.interface";
 import { MenuItemI } from "../launchpad/IconMenu.interface";
+import React, { ReactElement } from "react"
 
 export interface FolderI {
   _id: string
   name: string
   public: boolean
   home?: string
+  icon?: string
+}
+
+export interface IconI {
+  folder: string
+  documents: string
+  project: string
+  default: string
 }
 
 export interface FolderSharingI {
