@@ -8,18 +8,21 @@ export const FoldersDB: FolderI[] = [
     name: 'General',
     public: true,
     home: '1',
+    icon: 'folder'
   },
   {
     _id: '2',
     name: 'Construction',
     public: true,
     home: '1',
+    icon: 'project'
   },
   {
     _id: '3',
     name: 'Appliances',
     public: true,
     home: '1',
+    icon: 'documents'
   },
   {
     _id: '4',
