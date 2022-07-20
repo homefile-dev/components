@@ -13,6 +13,7 @@ import { useState } from 'react'
 
 export const SelectInput = ({
   handleClick,
+  height = 'sm',
   initailValue,
   isDisabled,
   items,
@@ -25,7 +26,7 @@ export const SelectInput = ({
         disabled={isDisabled}
         w={width}
         bg="white"
-        h="input.sm"
+        h={`input.${height}`}
         px="2"
         border="1px"
         borderRadius="sm"

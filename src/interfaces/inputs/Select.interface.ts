@@ -5,6 +5,7 @@ export interface SelectItemI {
 
 export interface SelectI {
   handleClick: (form: SelectItemI | string) => void
+  height?: string
   initailValue: string
   isDisabled?: boolean
   items: SelectItemI[] | string[]
