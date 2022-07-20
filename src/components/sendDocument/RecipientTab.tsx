@@ -42,7 +42,7 @@ export const RecipientTab = ({
           <Box w="20rem">
             <TextInput
               errorMessage={errorMessage || t('forms.errorEmail')}
-              handleChange={(event) => handleChange(event)}
+              handleChange={handleChange}
               hasError={hasError}
               id="email"
               placeholder={t('addRecipient.placeholder')}
