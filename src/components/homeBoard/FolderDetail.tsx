@@ -26,7 +26,7 @@ import { SortHeader } from './SortHeader'
 import { Files } from './Files'
 import { fileRecipientProxy } from '../../proxies/fileRecipient.proxy'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
-import EditFolderName from './EditFolderName'
+import { EditFolderName } from './EditFolderName'
 import { SharedFilter } from './SharedFilter'
 
 export const FolderDetail = ({
