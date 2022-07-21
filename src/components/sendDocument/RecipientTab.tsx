@@ -9,26 +9,30 @@ import { CustomIcon } from '../icons/CustomIcon'
 import { TextInput } from '../inputs'
 import { RecipientCard } from './RecipientCard'
 import { useEffect } from 'react'
+import { SelectInput } from '../inputs/SelectInput'
 
 export const RecipientTab = ({
   handleAdd,
   handleRemove,
   hasTitle,
+  isDocument,
   loading,
   recipients: recipientsDB,
 }: RecipientTabI) => {
   const {
+    accountType,
     email,
     errorMessage,
     handleAddLocal,
     handleChange,
     hasError,
     handleRemoveLocal,
+    handleSelect,
     isUniqueEmail,
     recipients,
-    setEmail,
     setHasError,
     setRecipients,
+    types,
   } = useAddRecipient()
 
   useEffect(() => {
@@ -38,57 +42,99 @@ export const RecipientTab = ({
   return (
     <Box m="-0.8125rem">
       <Box bg="container.tertiary" p="base" w="100%">
-        <Flex w="100%" gap="base">
-          <Box w="20rem">
+        {isDocument ? (
+          <Flex w="100%" gap="base">
+            <Box w="20rem">
+              <TextInput
+                errorMessage={errorMessage || t('forms.errorEmail')}
+                handleChange={handleChange}
+                hasError={hasError}
+                id="email"
+                placeholder={t('addRecipient.placeholder')}
+                value={email}
+              />
+            </Box>
+            <Button
+              variant="tertiary"
+              onClick={() => {
+                if (isValidEmail(email) && isUniqueEmail(email)) {
+                  handleAdd({
+                    accountType,
+                    user: { email, firstName: '', lastName: '', phone: '' },
+                  })
+                  handleAddLocal()
+                } else {
+                  setHasError(true)
+                }
+              }}
+              disabled={!email}
+            >
+              {t('addRecipient.addBtn')}
+            </Button>
+          </Flex>
+        ) : (
+          <Stack spacing="base">
             <TextInput
               errorMessage={errorMessage || t('forms.errorEmail')}
               handleChange={handleChange}
               hasError={hasError}
               id="email"
-              placeholder={t('addRecipient.placeholder')}
+              placeholder={t('shareHome.placeholder')}
               value={email}
             />
-          </Box>
-          <Button
-            variant="tertiary"
-            onClick={() => {
-              if (isValidEmail(email) && isUniqueEmail(email)) {
-                handleAdd(email)
-                handleAddLocal(email)
-                setEmail('')
-              } else {
-                setHasError(true)
-              }
-            }}
-            disabled={!email}
-          >
-            {t('addRecipient.addBtn')}
-          </Button>
-        </Flex>
+            <Flex w="100%" gap="base">
+              <SelectInput
+                handleClick={(form) => handleSelect(form as string)}
+                initailValue={accountType}
+                items={types}
+                width="100%"
+                height="md"
+              />
+              <Button
+                variant="tertiary"
+                onClick={() => {
+                  if (isValidEmail(email) && isUniqueEmail(email)) {
+                    handleAdd({
+                      accountType,
+                      user: { email, firstName: '', lastName: '', phone: '' },
+                    })
+                    handleAddLocal()
+                  } else {
+                    setHasError(true)
+                  }
+                }}
+                disabled={!email}
+              >
+                {t('shareHome.btInvite')}
+              </Button>
+            </Flex>
+          </Stack>
+        )}
       </Box>
       {loading ? (
         <Center h="full" pb="8rem">
           <BeatLoader color="gray" size={8} />
         </Center>
       ) : (
-        <Stack
-          p="base"
-          minH="full"
-          w="100%"
-          spacing="base"
-        >
-          {recipients?.map(({ email, firstName, lastName, phone }, index) => (
+        <Stack p="base" minH="full" w="100%" spacing="base">
+          {recipients?.map((recipient, index) => (
             <Flex align="center" gap="2" key={email + index}>
-              <RecipientCard
-                hasTitle={hasTitle}
-                recipient={{ email, firstName, lastName, phone }}
-              />
+              {recipient && (
+                <RecipientCard
+                  hasTitle={hasTitle}
+                  isDocument={isDocument}
+                  recipient={recipient}
+                />
+              )}
               <Center>
                 <IconButton
                   w="2rem"
                   h="2rem"
                   aria-label="Delete recipient"
                   variant="iconOutlined"
+                  isDisabled={
+                    recipient?.accountType.toLowerCase() === 'homeowner'
+                  }
                   icon={<CustomIcon type={AiOutlineMinus} />}
                   onClick={() => {
                     handleRemove(email)
