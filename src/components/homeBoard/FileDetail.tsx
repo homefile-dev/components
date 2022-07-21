@@ -41,7 +41,6 @@ export const FileDetail = ({
         <RecipientTab
           handleAdd={handleAddRecipient}
           handleRemove={handleDeleteRecipient}
-          hasTitle={false}
           loading={false}
           recipients={recipients}
         />
