@@ -101,7 +101,8 @@
   "resolutions": {
     "trim-newlines": "^3.0.1",
     "**/trim": "^1.0.0",
-    "glob-parent": "^6.0.1"
+    "glob-parent": "^6.0.1",
+    "terser": "5.14.2"
   },
   "plugins": [
     "@semantic-release/commit-analyzer",
