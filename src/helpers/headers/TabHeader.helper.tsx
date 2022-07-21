@@ -1,10 +1,11 @@
 import { t } from 'i18next'
-import DetailsTab from '../../components/sendDocument/DetailsTab'
-import AddMedia from '../../components/sendDocument/AddMedia'
+import { DetailTab } from '../../components/sendDocument/DetailsTab'
+import { AddMedia } from '../../components/sendDocument/AddMedia'
 import { imagesDb } from '../sendDocument/AddMedia.helper'
 import { useEffect, useState } from 'react'
-import RecipientTab from '../../components/sendDocument/RecipientTab'
+import { RecipientTab } from '../../components/sendDocument/RecipientTab'
 import { recipientsDb } from '../sendDocument/AddRecipient.helper'
+import { AssociatedAccountI } from '../../interfaces/shareHome/ShareHome.interface'
 
 const AddMediaContent = () => {
   const [isUploading, setIsUploading] = useState(false)
@@ -32,20 +33,19 @@ const AddMediaContent = () => {
 }
 
 export const AddRecipientContent = () => {
-  const [recipients, setRecipients] = useState(recipientsDb)
+  const [recipients, setRecipients] =
+    useState<AssociatedAccountI[]>(recipientsDb)
   return (
     <RecipientTab
-      handleAdd={(email: string) => {
-        setRecipients([
-          ...recipients,
-          { email, firstName: '', lastName: '', phone: '' },
-        ])
+      handleAdd={(form: AssociatedAccountI) => {
+        setRecipients([...recipients, form])
       }}
       handleRemove={(email: string) =>
         setRecipients(
-          recipients.filter((recipient) => recipient.email !== email)
+          recipients.filter((recipient) => recipient.user.email !== email)
         )
       }
+      isDocument
       loading={false}
       recipients={recipients}
     />
@@ -55,7 +55,7 @@ export const AddRecipientContent = () => {
 export const createDocList = [
   {
     label: t('createDocument.tabs.tab1'),
-    component: <DetailsTab />,
+    component: <DetailTab />,
   },
   {
     label: t('createDocument.tabs.tab2'),

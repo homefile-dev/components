@@ -1,8 +1,8 @@
 import { FileI } from './File.interface'
 import { FolderI } from './FolderSharing.interface'
-import { RecipientI } from '../sendDocument/AddRecipient.interface'
 import { ImageDBI } from '../sendDocument/AddMedia.interface'
 import { SelectItemI } from '../inputs/Select.interface'
+import { AssociatedAccountI } from '../shareHome/ShareHome.interface';
 
 export interface FolderDetailI {
   addedBy: string
@@ -10,7 +10,7 @@ export interface FolderDetailI {
   editing?: boolean
   files: FolderFileI[]
   folder: FolderI
-  handleAddRecipient: (email: string) => void
+  handleAddRecipient: (form: AssociatedAccountI) => void
   handleClose: () => void
   handleDeleteFile: (id: string) => void
   handleDeleteFolder: (id: string) => void
@@ -25,7 +25,7 @@ export interface FolderDetailI {
   handleUpload: (files: FolderFileI[]) => void
   loading?: boolean
   panelSize?: string
-  recipients?: RecipientI[]
+  recipients?: AssociatedAccountI[]
   uploading: boolean
 }
 

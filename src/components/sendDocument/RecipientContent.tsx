@@ -1,8 +1,18 @@
 import { Flex, Avatar, Stack, Box, Text } from '@chakra-ui/react'
-import { RecipientI } from "../../interfaces/sendDocument/AddRecipient.interface"
 
-export const RecipientContent = (recipient: RecipientI) => {
-  const { email, firstName, lastName, phone } = recipient
+interface RecipientCardI {
+  email: string
+  firstName?: string
+  lastName?: string
+  phone?: string
+}
+
+export const RecipientContent = ({
+  firstName = '',
+  lastName = '',
+  phone = '',
+  email = '',
+}: RecipientCardI) => {
   return (
     <Flex gap="2" align={firstName ? 'start' : 'center'}>
       <Avatar

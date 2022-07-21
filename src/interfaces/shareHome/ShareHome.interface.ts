@@ -1,9 +1,9 @@
-export interface ShareFormI {
+export interface AssociatedAccountI {
   accountType: string
-  email: string
+  user: UserI
 }
 
-export interface AssociatedAccountI {
+export interface UserI {
   email: string
   firstName?: string
   lastName?: string
@@ -12,6 +12,6 @@ export interface AssociatedAccountI {
 
 export interface ShareHomeI {
   associatedAccounts: AssociatedAccountI[]
-  handleAdd: (form: ShareFormI) => void
+  handleAdd: (form: AssociatedAccountI) => void
   handleShowAccounts: () => void
 }

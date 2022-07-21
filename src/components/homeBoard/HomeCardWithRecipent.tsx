@@ -3,8 +3,8 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 import { HomeCardWithRecipentI } from '../../interfaces/homeBoard/HomeCardWithRecipent.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 import { IconMenu } from '../launchpad'
-import RecipientContent from '../sendDocument/RecipientContent'
-import HomeCard from './HomeCard'
+import { RecipientContent } from '../sendDocument/RecipientContent'
+import { HomeCard } from './HomeCard'
 
 export const HomeCardWithRecipent = ({
   address: { city, state, street, zip },
@@ -29,8 +29,8 @@ export const HomeCardWithRecipent = ({
 
       <Stack p="base" spacing="1">
         {recipients &&
-          recipients?.map(({ email, firstName, lastName, phone }) => (
-            <Container p="base" key={email}>
+          recipients?.map(({ user }) => (
+            <Container p="base" key={user.email}>
               {menu && (
                 <Flex justify="space-between" mb="-4" mt="-2">
                   <Box />
@@ -38,18 +38,13 @@ export const HomeCardWithRecipent = ({
                     icon={<CustomIcon type={FiMoreHorizontal} size="7" />}
                     menuItems={menu}
                     itemForm={{
-                      _id: email,
-                      name: firstName || '',
+                      _id: user.email,
+                      name: user.firstName || '',
                     }}
                   />
                 </Flex>
               )}
-              <RecipientContent
-                email={email}
-                firstName={firstName}
-                lastName={lastName}
-                phone={phone}
-              />
+              <RecipientContent {...user} />
             </Container>
           ))}
       </Stack>

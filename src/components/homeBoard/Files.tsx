@@ -6,10 +6,11 @@ import { File } from './File'
 import { folderHeaderProxy } from '../../proxies/folderHeader.proxy'
 import { fileDetailProxy } from '../../proxies/fileDetail.proxy'
 import { FolderFileI } from '../../interfaces/homeBoard/FolderDetail.interface'
+import { AssociatedAccountI } from '../../interfaces/shareHome/ShareHome.interface';
 
 interface FilesI {
   files: FolderFileI[]
-  handleAddRecipient: (email: string) => void
+  handleAddRecipient: (form: AssociatedAccountI) => void
   handleDeleteFile: (id: string) => void
   handleDeleteRecipient: (email: string) => void
   handleEditDescription: (id: string) => void

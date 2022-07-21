@@ -1,8 +1,9 @@
 import { proxy } from 'valtio'
-import { RecipientI } from '../interfaces/sendDocument/AddRecipient.interface'
+import { AssociatedAccountI } from '../interfaces/shareHome/ShareHome.interface';
+
 
 interface ShareWithI {
-  recipients?: RecipientI[]
+  recipients?: AssociatedAccountI[]
 }
 
 export const fileRecipientProxy = proxy<ShareWithI>({

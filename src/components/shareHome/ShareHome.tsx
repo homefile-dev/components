@@ -68,7 +68,10 @@ export const ShareHome = ({
               variant="tertiary"
               onClick={() => {
                 isValidEmail(email)
-                  ? handleAdd({ email, accountType })
+                  ? handleAdd({
+                      accountType,
+                      user: { email, firstName: '', lastName: '', phone: '' },
+                    })
                   : setHasError(true)
               }}
               disabled={!email}

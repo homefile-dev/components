@@ -1,8 +1,9 @@
 import { MenuItemI } from "../launchpad/IconMenu.interface"
+import { AssociatedAccountI } from '../shareHome/ShareHome.interface';
 
 export interface FileDetailI {
   editing?: boolean
-  handleAddRecipient: (email: string) => void
+  handleAddRecipient: (form: AssociatedAccountI) => void
   handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
   handleDeleteRecipient: (email: string) => void

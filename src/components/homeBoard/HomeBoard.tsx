@@ -73,10 +73,13 @@ export const HomeBoard = () => {
               panelSize="md"
               recipients={[
                 {
-                  firstName: 'John',
-                  lastName: 'Doe',
-                  email: 'user@user.com',
-                  phone: '32329099',
+                  accountType: 'Homeowner',
+                  user: {
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    email: 'user@user.com',
+                    phone: '32329099',
+                  },
                 },
               ]}
               uploading={false}

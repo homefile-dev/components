@@ -1,14 +1,10 @@
-export interface RecipientI {
-  email: string
-  firstName?: string
-  lastName?: string
-  phone?: string
-}
+import { AssociatedAccountI } from '../shareHome/ShareHome.interface'
 
 export interface RecipientTabI {
-  handleAdd: (email: string) => void
+  handleAdd: (form: AssociatedAccountI) => void
   handleRemove: (email: string) => void
   hasTitle?: boolean
+  isDocument?: boolean
   loading?: boolean
-  recipients?: RecipientI[]
+  recipients?: AssociatedAccountI[]
 }
