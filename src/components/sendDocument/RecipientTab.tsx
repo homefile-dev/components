@@ -137,7 +137,7 @@ export const RecipientTab = ({
                   }
                   icon={<CustomIcon type={AiOutlineMinus} />}
                   onClick={() => {
-                    handleRemove(email)
+                    handleRemove(recipient.user.email)
                     handleRemoveLocal(index)
                   }}
                 />
