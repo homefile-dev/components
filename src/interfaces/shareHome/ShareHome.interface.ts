@@ -8,6 +8,7 @@ export interface UserI {
   firstName?: string
   lastName?: string
   phone?: string
+  _id?: string
 }
 
 export interface ShareHomeI {
