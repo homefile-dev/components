@@ -4,11 +4,12 @@ import { Recipient } from '../../assets/images'
 import { AssociatedAccountI } from '../../interfaces/shareHome/ShareHome.interface'
 import { RecipientContent } from './RecipientContent'
 import {
-  Contributor,
   Homeowner,
   Manager,
   Member,
 } from '../../assets/images/accountTypes'
+
+import {Contributor} from '../../assets/images'
 
 interface RecipientCardI {
   hasTitle?: boolean
