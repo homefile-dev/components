@@ -20,7 +20,7 @@ export const RecipientTab = ({
   recipients: recipientsDB,
 }: RecipientTabI) => {
   const {
-    accountType,
+    accountTypes,
     email,
     errorMessage,
     handleAddLocal,
@@ -59,7 +59,7 @@ export const RecipientTab = ({
               onClick={() => {
                 if (isValidEmail(email) && isUniqueEmail(email)) {
                   handleAdd({
-                    accountType,
+                    accountTypes,
                     user: { email, firstName: '', lastName: '', phone: '' },
                   })
                   handleAddLocal()
@@ -85,7 +85,7 @@ export const RecipientTab = ({
             <Flex w="100%" gap="base">
               <SelectInput
                 handleClick={(form) => handleSelect(form as string)}
-                initailValue={accountType}
+                initailValue={accountTypes[0]}
                 items={types}
                 width="100%"
                 height="md"
@@ -95,7 +95,7 @@ export const RecipientTab = ({
                 onClick={() => {
                   if (isValidEmail(email) && isUniqueEmail(email)) {
                     handleAdd({
-                      accountType,
+                      accountTypes,
                       user: { email, firstName: '', lastName: '', phone: '' },
                     })
                     handleAddLocal()
@@ -133,7 +133,7 @@ export const RecipientTab = ({
                   aria-label="Delete recipient"
                   variant="iconOutlined"
                   isDisabled={
-                    recipient?.accountType.toLowerCase() === 'homeowner'
+                    recipient?.accountTypes[0].toLowerCase() === 'homeowner'
                   }
                   icon={<CustomIcon type={AiOutlineMinus} />}
                   onClick={() => {

@@ -14,7 +14,7 @@ interface RecipientCardI {
 export const RecipientCard = ({
   hasTitle = true,
   isDocument = false,
-  recipient: { accountType, user },
+  recipient: { accountTypes, user },
 }: RecipientCardI) => {
   const { firstName, lastName, phone, email } = user
 
@@ -35,7 +35,7 @@ export const RecipientCard = ({
                 isDocument
                   ? Recipient
                   : accountIcon[
-                      accountType.toLowerCase() as keyof typeof accountIcon
+                      accountTypes[0].toLowerCase() as keyof typeof accountIcon
                     ] || Member
               }
               alt=""
@@ -43,7 +43,7 @@ export const RecipientCard = ({
               h={isDocument ? '10px' : '16px'}
             />
             <Text fontSize="xs" textTransform="uppercase">
-              {isDocument ? t('addRecipient.title') : accountType}
+              {isDocument ? t('addRecipient.title') : accountTypes[0]}
             </Text>
           </Flex>
         )}

@@ -7,11 +7,11 @@ export const useAddRecipient = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [recipients, setRecipients] = useState<AssociatedAccountI[]>([])
   const [hasError, setHasError] = useState(false)
-  const [accountType, setAccountType] = useState('Member')
+  const [accountTypes, setAccountTypes] = useState(['Member'])
   const types = t('shareHome.accountTypes').split(',')
 
   const handleSelect = (value: string) => {
-    setAccountType(value)
+    setAccountTypes([value])
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +20,7 @@ export const useAddRecipient = () => {
   }
 
   const handleAddLocal = () => {
-    setRecipients([...recipients, { accountType, user: { email } }])
+    setRecipients([...recipients, { accountTypes, user: { email } }])
     setEmail('')
   }
 
@@ -40,7 +40,7 @@ export const useAddRecipient = () => {
   }
 
   return {
-    accountType,
+    accountTypes,
     email,
     errorMessage,
     handleAddLocal,
