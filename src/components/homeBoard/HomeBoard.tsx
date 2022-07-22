@@ -73,7 +73,7 @@ export const HomeBoard = () => {
               panelSize="md"
               recipients={[
                 {
-                  accountType: 'Homeowner',
+                  accountTypes: ['Homeowner'],
                   user: {
                     firstName: 'John',
                     lastName: 'Doe',

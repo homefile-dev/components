@@ -24,7 +24,7 @@ export const ShareHome = ({
   handleShowAccounts,
 }: ShareHomeI) => {
   const [email, setEmail] = useState('')
-  const [accountType, setAccountType] = useState('Member')
+  const [accountTypes, setAccountTypes] = useState(['Member'])
   const [hasError, setHasError] = useState(false)
   const types = t('shareHome.accountTypes').split(',')
 
@@ -34,7 +34,7 @@ export const ShareHome = ({
   }
 
   const handleSelect = (value: string) => {
-    setAccountType(value)
+    setAccountTypes([value])
   }
 
   return (
@@ -59,7 +59,7 @@ export const ShareHome = ({
           <Flex w="100%" gap="base">
             <SelectInput
               handleClick={(form) => handleSelect(form as string)}
-              initailValue={accountType}
+              initailValue={accountTypes[0]}
               items={types}
               width="100%"
               height="md"
@@ -69,7 +69,7 @@ export const ShareHome = ({
               onClick={() => {
                 isValidEmail(email)
                   ? handleAdd({
-                      accountType,
+                      accountTypes,
                       user: { email, firstName: '', lastName: '', phone: '' },
                     })
                   : setHasError(true)

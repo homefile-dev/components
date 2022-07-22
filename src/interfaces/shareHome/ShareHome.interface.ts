@@ -1,5 +1,5 @@
 export interface AssociatedAccountI {
-  accountType: string
+  accountTypes: string[]
   user: UserI
 }
 

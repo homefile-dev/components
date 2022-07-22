@@ -1,6 +1,6 @@
 export const recipientsDb = [
   {
-    accountType: 'Member',
+    accountTypes: ['Member'],
     user: {
       email: 'user1@gmail.com',
       firstName: 'John',
@@ -9,7 +9,7 @@ export const recipientsDb = [
     },
   },
   {
-    accountType: 'Member',
+    accountTypes: ['Member'],
     user: {
       email: 'user2@gmail.com',
       firstName: 'Jane',
