@@ -3,13 +3,7 @@ import { t } from 'i18next'
 import { Recipient } from '../../assets/images'
 import { AssociatedAccountI } from '../../interfaces/shareHome/ShareHome.interface'
 import { RecipientContent } from './RecipientContent'
-import {
-  Homeowner,
-  Manager,
-  Member,
-} from '../../assets/images/accountTypes'
-
-import {Contributor} from '../../assets/images'
+import {Contributor, Homeowner, Manager, Member} from '../../assets/images'
 
 interface RecipientCardI {
   hasTitle?: boolean

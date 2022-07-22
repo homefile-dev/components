@@ -26,6 +26,9 @@ import VideoIcon from './video-icon.svg'
 import YellowFolderUnshared from './yellow-folder-unshared.svg'
 import GreenFolder from './green-folder.svg'
 import Contributor from './contributor.svg'
+import Homeowner from './homeowner.svg'
+import Manager from './manager.svg'
+import Member from './member.svg'
 
 export {
   Document,
@@ -55,5 +58,8 @@ export {
   VideoIcon,
   YellowFolderUnshared,
   GreenFolder,
-  Contributor
+  Contributor,
+  Homeowner,
+  Manager,
+  Member
 }
