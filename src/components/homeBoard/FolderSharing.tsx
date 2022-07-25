@@ -10,14 +10,11 @@ import {
 } from '@chakra-ui/react'
 import { t } from 'i18next'
 import { FiMoreHorizontal } from 'react-icons/fi'
+import { BlueFolder, YellowFolder, GreenFolder } from '../../assets/images'
 import {
-  BlueFolder,
-  VioletFolder,
-  YellowFolder,
-  YellowFolderUnshared,
-  GreenFolder
-} from '../../assets/images'
-import { FolderSharingI, IconI } from '../../interfaces/homeBoard/FolderSharing.interface'
+  FolderSharingI,
+  IconI,
+} from '../../interfaces/homeBoard/FolderSharing.interface'
 import { TextBagde } from '../badge/TextBadge'
 import { ContainerHeader } from '../headers'
 import { CustomIcon } from '../icons/CustomIcon'
@@ -39,15 +36,16 @@ export const FolderSharing = ({
   const isDesktop = width > 800
 
   const getIcon = (icon: string) => {
-
     const iconTypes: IconI = {
       folder: YellowFolder,
       documents: BlueFolder,
       project: GreenFolder,
-      default: YellowFolder
+      default: YellowFolder,
     }
 
-    return iconTypes[icon as keyof IconI] ? iconTypes[icon as keyof IconI] : iconTypes['default']
+    return iconTypes[icon as keyof IconI]
+      ? iconTypes[icon as keyof IconI]
+      : iconTypes['default']
   }
 
   return (
@@ -67,24 +65,19 @@ export const FolderSharing = ({
             isDisabled
             items={selectItems}
           />
-          <LeftButtonAnimated handleClick={handleAddNewFolder} label="Folder" />
+          <LeftButtonAnimated
+            handleClick={handleAddNewFolder}
+            label={t('folderSharing.addFolder.label')}
+          />
         </Flex>
       </Box>
       <Wrap py="8" px="base" spacing="2">
         {folders &&
           folders.map(({ _id, name, public: isPublic, home, icon }, index) => {
-            // const isNew = status?.toLowerCase() === 'new'
-            // const isShared = needsReview || reviewed
-            // const icon = isNew
-            //   ? VioletFolder
-            //   : isShared
-            //   ? BlueFolder
-            //   : YellowFolderUnshared
-
             const isNew = false
             const isShared = false
             const folderIcon = icon ? getIcon(icon) : getIcon('default')
-            
+
             return (
               <WrapItem w="6rem" key={_id}>
                 <Button
@@ -99,7 +92,6 @@ export const FolderSharing = ({
                       name,
                       public: isPublic,
                       home,
-
                     })
                     folderHeaderProxy.icon = folderIcon
                     folderHeaderProxy.title = name
