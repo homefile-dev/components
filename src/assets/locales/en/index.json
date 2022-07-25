@@ -61,7 +61,8 @@
       "title": "Add Folder",
       "cancel": "Cancel",
       "create": "Create another",
-      "close": "Close"
+      "close": "Close",
+      "label": "Folder"
     },
     "altIcon": "Folder",
     "details": {
@@ -152,6 +153,7 @@
   },
   "myHomes": {
     "addHome": "Home",
+    "addProject": "Project",
     "board": {
       "title": "You are viewing "
     },
