@@ -56,6 +56,7 @@ const theme = extendTheme({
       icon: '#BCD1D8',
       menuIcon: '#464646',
       roomHover: '#E8F8E1',
+      green: '#3FAA1F',
     },
     container: {
       primary: '#DCE8EC',
@@ -146,7 +147,7 @@ const theme = extendTheme({
       full: '100%',
     },
     container: {
-      roomIcon: '3.8rem', 
+      roomIcon: '3.8rem',
       masthead: '4rem',
       xxs: '6rem',
       xs: '10rem',
