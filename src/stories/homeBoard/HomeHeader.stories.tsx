@@ -7,7 +7,13 @@ export default {
 } as ComponentMeta<typeof HomeHeader>
 
 const Template: ComponentStory<typeof HomeHeader> = () => {
-  return <HomeHeader homeName="The Edmunds" handleClick={() => {}} />
+  return (
+    <HomeHeader
+      homeName="The Edmunds"
+      handleAddNewProject={() => {}}
+      handleClick={() => {}}
+    />
+  )
 }
 
 export const HomeHeaderComponent = Template.bind({})

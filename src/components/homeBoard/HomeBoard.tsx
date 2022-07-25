@@ -94,8 +94,12 @@ export const HomeBoard = () => {
         <RoomsMenu rooms={RoomsList} />
         <Stack spacing="base">
           <Masthead userName={userName} menuItems={UserMenuItems} />
-          <Stack px={[0, 'base']} spacing="base">
-            <HomeHeader handleClick={() => {}} homeName={homeName} />
+          <Stack pl={[0, 'base']} spacing="base">
+            <HomeHeader
+              handleClick={() => {}}
+              homeName={homeName}
+              handleAddNewProject={() => {}}
+            />
             <Flex direction={['column-reverse', 'row']} gap="base" w="full">
               <HomeCardWithRecipent
                 address={HomeCards[0].address}
