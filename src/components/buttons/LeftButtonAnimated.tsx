@@ -4,12 +4,16 @@ import { HiOutlinePlus } from 'react-icons/hi'
 import { CustomIcon } from '../icons/CustomIcon'
 
 interface LeftButtonAnimatedI {
+  bgColor?: string
   handleClick: () => void
+  height?: string
   label: string
 }
 
 export const LeftButtonAnimated = ({
+  bgColor = "button.primary",
   handleClick,
+  height = '1.75rem',
   label,
 }: LeftButtonAnimatedI) => {
   let isMounted = true
@@ -30,8 +34,9 @@ export const LeftButtonAnimated = ({
 
   return (
     <Button
-      h="36px"
+      h={height}
       variant="leftRounded"
+      bg={bgColor}
       w={`${buttonWidth}px`}
       pl={isCollapsed ? '4px' : '0'}
       onMouseEnter={() => setButtonWidth(labelWidth)}
