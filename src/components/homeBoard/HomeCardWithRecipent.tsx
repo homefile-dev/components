@@ -35,10 +35,8 @@ export const HomeCardWithRecipent = ({
             return (
               <Container p="base" key={user.email} position="relative">
                 <Flex mb={hasAccountType ? 'base' : '0'}>
-                  {hasAccountType ? (
+                  {hasAccountType && (
                     <RecipientHeader accountType={accountTypes[0]} />
-                  ) : (
-                    <Box />
                   )}
                   {menu && (
                     <Box position="absolute" top="3px" right="2">
