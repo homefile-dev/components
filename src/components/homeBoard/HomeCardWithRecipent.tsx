@@ -1,4 +1,4 @@
-import { Container, Flex, Stack } from '@chakra-ui/react'
+import { Container, Flex, Stack, Box } from '@chakra-ui/react'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { HomeCardWithRecipentI } from '../../interfaces/homeBoard/HomeCardWithRecipent.interface'
 import { CustomIcon } from '../icons/CustomIcon'
@@ -30,24 +30,33 @@ export const HomeCardWithRecipent = ({
 
       <Stack p="base" spacing="1">
         {recipients &&
-          recipients?.map(({ accountTypes, user }) => (
-            <Container p="base" key={user.email}>
-              {menu && (
-                <Flex justify="space-between" align="center" mt="-2" mb="2">
-                  <RecipientHeader accountType={accountTypes[0]} />
-                  <IconMenu
-                    icon={<CustomIcon type={FiMoreHorizontal} size="7" />}
-                    menuItems={menu}
-                    itemForm={{
-                      _id: user.email,
-                      name: user.firstName || '',
-                    }}
-                  />
+          recipients?.map(({ accountTypes, user }) => {
+            const hasAccountType = accountTypes.length > 0
+            return (
+              <Container p="base" key={user.email} position="relative">
+                <Flex mb={hasAccountType ? 'base' : '0'}>
+                  {hasAccountType ? (
+                    <RecipientHeader accountType={accountTypes[0]} />
+                  ) : (
+                    <Box />
+                  )}
+                  {menu && (
+                    <Box position="absolute" top="3px" right="2">
+                      <IconMenu
+                        icon={<CustomIcon type={FiMoreHorizontal} size="7" />}
+                        menuItems={menu}
+                        itemForm={{
+                          _id: user.email,
+                          name: user.firstName || '',
+                        }}
+                      />
+                    </Box>
+                  )}
                 </Flex>
-              )}
-              <RecipientContent {...user} />
-            </Container>
-          ))}
+                <RecipientContent {...user} />
+              </Container>
+            )
+          })}
       </Stack>
     </Container>
   )
