@@ -86,6 +86,7 @@ export const FolderDetail = ({
   fileRecipientProxy.recipients = recipients
   fileDetailProxy.addedBy = addedBy
   fileDetailProxy.editing = editing
+  fileDetailProxy.isDocument = isDocument
 
   const sortMenu = [
     {
@@ -199,7 +200,6 @@ export const FolderDetail = ({
                 handleOpenFile={handleOpenFile}
                 panelSize={panelSize}
                 uploading={uploading}
-                isDocument={isDocument}
               />
             }
             isLoading={loading || uploading}
