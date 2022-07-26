@@ -52,6 +52,7 @@ export const FolderDetail = ({
   panelSize = 'md',
   recipients,
   uploading,
+  isDocument
 }: FolderDetailI) => {
   const {
     acceptedFiles,
@@ -198,6 +199,7 @@ export const FolderDetail = ({
                 handleOpenFile={handleOpenFile}
                 panelSize={panelSize}
                 uploading={uploading}
+                isDocument={isDocument}
               />
             }
             isLoading={loading || uploading}

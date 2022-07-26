@@ -23,6 +23,7 @@ export const FileDetail = ({
   handleEditDescription,
   handleEditFileName,
   handleDeleteRecipient,
+  isDocument
 }: FileDetailI) => {
   const { recipients } = fileRecipientProxy
   const tabs = [
@@ -43,6 +44,7 @@ export const FileDetail = ({
           handleRemove={handleDeleteRecipient}
           loading={false}
           recipients={recipients}
+          isDocument={isDocument}
         />
       ),
     },

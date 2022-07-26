@@ -70,6 +70,7 @@ export const HomeBoard = () => {
               files={fileDB}
               handleUpload={() => {}}
               loading={false}
+              isDocument={true}
               panelSize="md"
               recipients={[
                 {

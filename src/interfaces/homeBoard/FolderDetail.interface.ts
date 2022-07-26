@@ -27,6 +27,7 @@ export interface FolderDetailI {
   panelSize?: string
   recipients?: AssociatedAccountI[]
   uploading: boolean
+  isDocument?: boolean
 }
 
 interface FileDBI {

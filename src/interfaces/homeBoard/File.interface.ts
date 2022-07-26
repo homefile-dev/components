@@ -7,6 +7,7 @@ export interface FileDetailI {
   handleEditDescription: (id: string) => void
   handleEditFileName: (id: string) => void
   handleDeleteRecipient: (email: string) => void
+  isDocument?: boolean
 }
 
 export interface FileI {

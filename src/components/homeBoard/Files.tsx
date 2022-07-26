@@ -19,6 +19,7 @@ interface FilesI {
   handleOpenFile: (file: FolderFileI) => void
   panelSize?: string
   uploading?: boolean
+  isDocument?: boolean
 }
 
 export const Files = ({
@@ -32,6 +33,7 @@ export const Files = ({
   handleOpenFile,
   panelSize,
   uploading,
+  isDocument
 }: FilesI) => {
   const {
     isOpen: isRightOpen,
@@ -108,6 +110,7 @@ export const Files = ({
             handleEditDescription={handleEditDescription}
             handleEditFileName={handleEditFileName}
             handleDeleteRecipient={handleDeleteRecipient}
+            isDocument={isDocument}
           />
         }
         isOpen={isRightOpen}
