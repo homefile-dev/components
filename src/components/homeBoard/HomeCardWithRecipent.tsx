@@ -1,9 +1,10 @@
-import { Box, Container, Flex, Stack } from '@chakra-ui/react'
+import { Container, Flex, Stack } from '@chakra-ui/react'
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { HomeCardWithRecipentI } from '../../interfaces/homeBoard/HomeCardWithRecipent.interface'
 import { CustomIcon } from '../icons/CustomIcon'
 import { IconMenu } from '../launchpad'
 import { RecipientContent } from '../sendDocument/RecipientContent'
+import { RecipientHeader } from '../sendDocument/RecipientHeader'
 import { HomeCard } from './HomeCard'
 
 export const HomeCardWithRecipent = ({
@@ -29,11 +30,11 @@ export const HomeCardWithRecipent = ({
 
       <Stack p="base" spacing="1">
         {recipients &&
-          recipients?.map(({ user }) => (
+          recipients?.map(({ accountTypes, user }) => (
             <Container p="base" key={user.email}>
               {menu && (
-                <Flex justify="space-between" mb="-4" mt="-2">
-                  <Box />
+                <Flex justify="space-between" align="center" mt="-2" mb="2">
+                  <RecipientHeader accountType={accountTypes[0]} />
                   <IconMenu
                     icon={<CustomIcon type={FiMoreHorizontal} size="7" />}
                     menuItems={menu}

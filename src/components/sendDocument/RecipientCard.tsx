@@ -1,9 +1,7 @@
-import { Container, Flex, Stack, Image, Text } from '@chakra-ui/react'
-import { t } from 'i18next'
-import { Recipient } from '../../assets/images'
+import { Container, Stack } from '@chakra-ui/react'
 import { AssociatedAccountI } from '../../interfaces/shareHome/ShareHome.interface'
 import { RecipientContent } from './RecipientContent'
-import {Contributor, Homeowner, Manager, Member} from '../../assets/images'
+import { RecipientHeader } from './RecipientHeader'
 
 interface RecipientCardI {
   hasTitle?: boolean
@@ -18,34 +16,14 @@ export const RecipientCard = ({
 }: RecipientCardI) => {
   const { firstName, lastName, phone, email } = user
 
-  const accountIcon = {
-    contributor: Contributor,
-    homeowner: Homeowner,
-    manager: Manager,
-    member: Member,
-  }
-
   return (
     <Container p="base">
       <Stack spacing="4">
         {hasTitle && (
-          <Flex gap="2" w="full" align="center">
-            <Image
-              src={
-                isDocument
-                  ? Recipient
-                  : accountIcon[
-                      accountTypes[0].toLowerCase() as keyof typeof accountIcon
-                    ] || Member
-              }
-              alt=""
-              w="auto"
-              h={isDocument ? '10px' : '16px'}
-            />
-            <Text fontSize="xs" textTransform="uppercase">
-              {isDocument ? t('addRecipient.title') : accountTypes[0]}
-            </Text>
-          </Flex>
+          <RecipientHeader
+            accountType={accountTypes[0]}
+            isDocument={isDocument}
+          />
         )}
         {user && (
           <RecipientContent
