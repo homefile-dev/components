@@ -8,6 +8,7 @@ interface FileDetailI {
   _id: string
   icon: string
   name: string
+  isDocument?: boolean
 }
 
 export const fileDetailProxy = proxy<FileDetailI>({
@@ -18,4 +19,5 @@ export const fileDetailProxy = proxy<FileDetailI>({
   _id: '',
   icon: '',
   name: '',
+  isDocument: false
 })

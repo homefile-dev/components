@@ -23,9 +23,9 @@ export const FileDetail = ({
   handleEditDescription,
   handleEditFileName,
   handleDeleteRecipient,
-  isDocument
 }: FileDetailI) => {
   const { recipients } = fileRecipientProxy
+  const {isDocument} = fileDetailProxy
   const tabs = [
     {
       label: t('folderSharing.tabs.tab1'),
