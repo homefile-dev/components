@@ -15,13 +15,16 @@ export const RecipientCard = ({
   recipient: { accountTypes, user },
 }: RecipientCardI) => {
   const { firstName, lastName, phone, email } = user
+  const oneAccountType = accountTypes.length === 1
 
   return (
     <Container p="base">
       <Stack spacing="4">
         {hasTitle && (
           <RecipientHeader
-            accountType={accountTypes[0]}
+            accountType={
+              oneAccountType ? accountTypes[0] : accountTypes.join(', ')
+            }
             isDocument={isDocument}
           />
         )}

@@ -1,6 +1,12 @@
 import { Flex, Image, Text } from '@chakra-ui/react'
 import { t } from 'i18next'
-import { Contributor, Homeowner, Manager, Member, Recipient } from '../../assets/images'
+import {
+  Contributor,
+  Homeowner,
+  Manager,
+  Member,
+  Recipient,
+} from '../../assets/images'
 
 const accountIcon = {
   contributor: Contributor,
@@ -14,16 +20,18 @@ interface RecipientCardI {
   isDocument?: boolean
 }
 
-export const RecipientHeader = ({accountType, isDocument}: RecipientCardI) => {
+export const RecipientHeader = ({
+  accountType,
+  isDocument,
+}: RecipientCardI) => {
+  const type = accountType.split(', ')[0].toLowerCase()
   return (
     <Flex gap="2" w="full" align="center">
       <Image
         src={
           isDocument
             ? Recipient
-            : accountIcon[
-                accountType.toLowerCase() as keyof typeof accountIcon
-              ] || Member
+            : accountIcon[type as keyof typeof accountIcon] || Member
         }
         alt=""
         w="auto"
