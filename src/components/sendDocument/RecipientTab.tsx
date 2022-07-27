@@ -68,6 +68,7 @@ export const RecipientTab = ({
                 }
               }}
               disabled={!email}
+              h="input.md"
             >
               {t('addRecipient.addBtn')}
             </Button>
@@ -93,7 +94,7 @@ export const RecipientTab = ({
               <Button
                 variant="tertiary"
                 onClick={() => {
-                  if (isValidEmail(email) && isUniqueEmail(email)) {
+                  if (isValidEmail(email)) {
                     handleAdd({
                       accountTypes,
                       user: { email, firstName: '', lastName: '', phone: '' },
