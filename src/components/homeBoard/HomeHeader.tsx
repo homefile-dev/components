@@ -33,8 +33,10 @@ export const HomeHeader = ({
       <LeftButtonAnimated
         bgColor="button.green"
         handleClick={handleAddNewProject}
-        height="full"
+        height="2rem"
         label={t('myHomes.addProject')}
+        position="absolute"
+        right="0"
       />
     </Flex>
   )

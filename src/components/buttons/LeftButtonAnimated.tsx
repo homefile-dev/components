@@ -8,6 +8,8 @@ interface LeftButtonAnimatedI {
   handleClick: () => void
   height?: string
   label: string
+  position?: ('absolute' | 'relative' | 'fixed') 
+  right?: string
 }
 
 export const LeftButtonAnimated = ({
@@ -15,6 +17,8 @@ export const LeftButtonAnimated = ({
   handleClick,
   height = '1.75rem',
   label,
+  position = "relative",
+  right
 }: LeftButtonAnimatedI) => {
   let isMounted = true
   const labelWidth = label.length * 18 + 20
@@ -39,6 +43,8 @@ export const LeftButtonAnimated = ({
       bg={bgColor}
       w={`${buttonWidth}px`}
       pl={isCollapsed ? '4px' : '0'}
+      position={position}
+      right={right}
       onMouseEnter={() => setButtonWidth(labelWidth)}
       onMouseLeave={() => setButtonWidth(iconWidth)}
       onClick={handleClick}
