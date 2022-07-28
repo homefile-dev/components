@@ -1,3 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="43" viewBox="0 0 46 43">
-  <rect id="Retângulo_14100" data-name="Retângulo 14100" width="46" height="43" fill="#e24c5d"/>
+  <g id="Grupo_12581" data-name="Grupo 12581" transform="translate(-3672 4998)">
+    <rect id="Retângulo_14100" data-name="Retângulo 14100" width="46" height="43" transform="translate(3672 -4998)" fill="#e24c5d"/>
+    <rect id="Retângulo_14104" data-name="Retângulo 14104" width="46" height="11" transform="translate(3672 -4966)" fill="#40566b"/>
+    <path id="Polígono_42" data-name="Polígono 42" d="M10,0,20,17H0Z" transform="translate(3705.5 -4991.5) rotate(90)" fill="#fff"/>
+    <rect id="Retângulo_14105" data-name="Retângulo 14105" width="2" height="5" transform="translate(3675 -4963)" fill="#fff"/>
+    <rect id="Retângulo_14106" data-name="Retângulo 14106" width="2" height="5" transform="translate(3678 -4963)" fill="#fff"/>
+    <g id="Retângulo_14107" data-name="Retângulo 14107" transform="translate(3682 -4961)" fill="#fff" stroke="#fff" stroke-width="1">
+      <rect width="32" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="31" fill="none"/>
+    </g>
+    <g id="Grupo_12473" data-name="Grupo 12473" transform="translate(-1706 -101.338)">
+      <circle id="Elipse_703" data-name="Elipse 703" cx="1.78" cy="1.78" r="1.78" transform="translate(5408.457 -4861)" fill="#e24c5d"/>
+      <path id="Caminho_10077" data-name="Caminho 10077" d="M5165.486-611.939a2.494,2.494,0,0,1-2.491-2.491,2.494,2.494,0,0,1,2.491-2.491,2.494,2.494,0,0,1,2.491,2.491A2.494,2.494,0,0,1,5165.486-611.939Zm0-3.559a1.069,1.069,0,0,0-1.067,1.068,1.068,1.068,0,0,0,1.067,1.068,1.069,1.069,0,0,0,1.068-1.068A1.069,1.069,0,0,0,5165.486-615.5Z" transform="translate(244.75 -4244.79)" fill="#fff"/>
+    </g>
+  </g>
 </svg>
