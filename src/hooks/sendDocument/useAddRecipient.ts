@@ -19,15 +19,6 @@ export const useAddRecipient = () => {
     setEmail(event.target.value)
   }
 
-  const handleAddLocal = () => {
-    setRecipients([...recipients, { accountTypes, user: { email } }])
-    setEmail('')
-  }
-
-  const handleRemoveLocal = (index: number) => {
-    setRecipients(recipients.filter((_, i) => i !== index))
-  }
-
   const isUniqueEmail = (email: string) => {
     const isUnique = recipients.every(
       (recipient) => recipient.user.email !== email
@@ -43,10 +34,8 @@ export const useAddRecipient = () => {
     accountTypes,
     email,
     errorMessage,
-    handleAddLocal,
     handleChange,
     hasError,
-    handleRemoveLocal,
     handleSelect,
     isUniqueEmail,
     recipients,

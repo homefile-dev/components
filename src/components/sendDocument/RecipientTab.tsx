@@ -23,10 +23,8 @@ export const RecipientTab = ({
     accountTypes,
     email,
     errorMessage,
-    handleAddLocal,
     handleChange,
     hasError,
-    handleRemoveLocal,
     handleSelect,
     isUniqueEmail,
     recipients,
@@ -62,7 +60,6 @@ export const RecipientTab = ({
                     accountTypes,
                     user: { email, firstName: '', lastName: '', phone: '' },
                   })
-                  handleAddLocal()
                 } else {
                   setHasError(true)
                 }
@@ -99,7 +96,6 @@ export const RecipientTab = ({
                       accountTypes,
                       user: { email, firstName: '', lastName: '', phone: '' },
                     })
-                    handleAddLocal()
                   } else {
                     setHasError(true)
                   }
@@ -139,7 +135,6 @@ export const RecipientTab = ({
                   icon={<CustomIcon type={AiOutlineMinus} />}
                   onClick={() => {
                     handleRemove(recipient.user.email)
-                    handleRemoveLocal(index)
                   }}
                 />
               </Center>
