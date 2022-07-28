@@ -35,7 +35,9 @@ export const File = ({
     jpeg: ImgIcon,
     jpg: ImgIcon,
     png: ImgIcon,
-    video: VideoIcon,
+    heic: ImgIcon,
+    mp4: VideoIcon,
+    mov: VideoIcon,
   }
 
   return (

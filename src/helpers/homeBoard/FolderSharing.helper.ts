@@ -80,7 +80,7 @@ export const fileDB: ReportsI[] = [
     file: {
       _id: '62aa4c6db225dd3957d09b24',
       fileName: 'test-plans.jpeg-37f8c3',
-      extension: 'pdf',
+      extension: 'mov',
       originalName: 'test-plans.jpeg',
       bucketName: 'homefile-images',
       description: '',
