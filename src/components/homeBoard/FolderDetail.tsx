@@ -11,12 +11,7 @@ import {
   FolderFileI,
 } from '../../interfaces/homeBoard/FolderDetail.interface'
 import { PanelHeader } from '../headers'
-import {
-  BlueFolder,
-  VioletFolder,
-  YellowFolder,
-  YellowFolderUnshared,
-} from '../../assets/images'
+import { YellowFolder } from '../../assets/images'
 import { DragDropArea } from '../dragDrop/DragDropArea'
 import { useFolderDetail } from '../../hooks/homeBoard/useFolderDetail'
 import { DragDropLoading } from '../dragDrop/DragDropLoading'
@@ -52,7 +47,7 @@ export const FolderDetail = ({
   panelSize = 'md',
   recipients,
   uploading,
-  isDocument
+  isDocument,
 }: FolderDetailI) => {
   const {
     acceptedFiles,
@@ -74,13 +69,6 @@ export const FolderDetail = ({
   let isMounted = true
 
   const [dbFiles, setDbFiles] = useState<FolderFileI[]>([])
-  // const isNew = folder.status?.toLowerCase() === 'new'
-  // const isShared = folder.needsReview || folder.reviewed
-  // const icon = isNew
-  //   ? VioletFolder
-  //   : isShared
-  //   ? BlueFolder
-  //   : YellowFolderUnshared
   const icon = YellowFolder
   const typesOptions = ['All']
   fileRecipientProxy.recipients = recipients
